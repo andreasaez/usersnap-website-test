@@ -23,24 +23,28 @@ export const blueprint = {
       label: 'Connect',
       title: 'Centralize feedback from every team and source',
       body: 'Centralize feedback from every team and source in one place. A single code snippet connects Usersnap to your stack, so signal from support tickets, sales calls, and in-product sessions reaches your product team in a single view.',
+      href: '#',
     },
     {
       id: 'understand',
       label: 'Understand',
       title: 'AI surfaces the trends and gaps that matter',
       body: 'AI analyzes your consolidated feedback and surfaces the trends and gaps your product needs to fill, ranked by frequency and impact, so your team sees a clear picture of what customers actually need before the next planning cycle starts.',
+      href: '#',
     },
     {
       id: 'act',
       label: 'Act',
       title: 'Prioritize the opportunities worth your time',
       body: 'Identify the root causes behind each pattern, generate hypotheses, and prioritize the core opportunities worth spending time on. Every decision comes with the customer signal to back it, so scope discussions start from evidence, not instinct.',
+      href: '#',
     },
     {
       id: 'engage',
       label: 'Engage',
       title: 'Close the loop with the customers who asked',
       body: 'Drive awareness and adoption with targeted emails, in-app announcements, bulk feedback replies, and release notes that connect what shipped to the customers who asked for it.',
+      href: '#',
     },
   ],
 }

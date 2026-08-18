@@ -70,6 +70,12 @@ export default function Blueprint() {
                         <div className="px-6 pb-5 pl-16">
                           <p className="text-sm font-semibold text-ink">{step.title}</p>
                           <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.body}</p>
+                          <a
+                            href={step.href}
+                            className="mt-3 inline-block text-sm font-semibold text-purple transition-colors hover:text-purple-dark"
+                          >
+                            Learn more &rarr;
+                          </a>
                         </div>
                       </motion.div>
                     )}
