@@ -2,7 +2,7 @@ import { differentiators } from '../data/content'
 import Reveal from './Reveal'
 import GradientBackdrop from './GradientBackdrop'
 
-const accents = ['#48BBE7', '#EF5996', '#3A21CE']
+const accents = ['#48BBE7', '#EF5996', '#3A21CE', '#FB585B']
 
 const icons = [
   // Orchestration: connected nodes
@@ -21,6 +21,10 @@ const icons = [
     <path d="M18 6l11 4v8c0 7-4.5 11-11 12-6.5-1-11-5-11-12v-8l11-4z" strokeWidth="1.8" strokeLinejoin="round" />
     <path d="M12 18l4 4 8-8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </g>,
+  // Zero-friction implementation: lightning bolt
+  <g key="implementation">
+    <path d="M20 5L9 20h8l-3 11 13-16h-8l1-10z" strokeWidth="1.8" strokeLinejoin="round" strokeLinecap="round" />
+  </g>,
 ]
 
 export default function Differentiators() {
@@ -37,7 +41,7 @@ export default function Differentiators() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {differentiators.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.1}>
               <div className="h-full rounded-3xl border border-white/60 bg-white/70 p-8 shadow-[0_20px_60px_-25px_rgba(58,33,206,0.25)] backdrop-blur-xl">

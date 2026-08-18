@@ -11,11 +11,13 @@ const tints = [
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden py-24">
+    <section id="customers" className="relative overflow-hidden py-24">
       <GradientBackdrop />
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-purple">What customers say</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-purple">
+            Trusted by enterprise product teams at
+          </p>
         </Reveal>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

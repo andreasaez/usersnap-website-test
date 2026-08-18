@@ -1,25 +1,37 @@
 import { motion } from 'motion/react'
 
-const sources = [
+const HUB = { x: 300, y: 175, r: 34 }
+
+const inputs = [
   { label: 'Support tickets', y: 40, color: '#48BBE7' },
-  { label: 'Sales calls', y: 120, color: '#EF5996' },
-  { label: 'In-app comments', y: 200, color: '#3A21CE' },
-  { label: 'Surveys', y: 280, color: '#FB585B' },
+  { label: 'Sales calls', y: 113, color: '#EF5996' },
+  { label: 'In-app comments', y: 186, color: '#3A21CE' },
+  { label: 'Surveys', y: 259, color: '#FB585B' },
 ]
 
-const pathFor = (y: number) => `M 150 ${y} C 220 ${y}, 220 160, 300 160`
-const decisionPath = 'M 334 160 C 370 160, 370 160, 400 160'
+const outputs = [
+  { label: 'Hypotheses', y: 15, color: '#3A21CE' },
+  { label: 'Prototypes', y: 90, color: '#EF5996' },
+  { label: 'Trending problems', y: 165, color: '#FB585B' },
+  { label: 'Sentiment', y: 240, color: '#48BBE7' },
+  { label: 'Solutions', y: 315, color: '#3A21CE' },
+]
+
+const inPathFor = (y: number) =>
+  `M 150 ${y} C 220 ${y}, 220 ${HUB.y}, ${HUB.x - HUB.r} ${HUB.y}`
+const outPathFor = (y: number) =>
+  `M ${HUB.x + HUB.r} ${HUB.y} C ${HUB.x + 70} ${HUB.y}, ${HUB.x + 70} ${y}, 470 ${y}`
 
 export default function OrchestrationDiagram() {
   return (
-    <div className="relative w-full max-w-md">
+    <div className="relative w-full max-w-xl">
       <div className="absolute -inset-10 -z-10 rounded-full bg-gradient-to-br from-purple-faint via-sky/10 to-pink/10 blur-2xl" />
 
-      <svg viewBox="0 0 420 320" className="w-full" fill="none">
-        {sources.map((s, i) => (
+      <svg viewBox="0 0 610 360" className="w-full" fill="none">
+        {inputs.map((s, i) => (
           <motion.path
-            key={s.label}
-            d={pathFor(s.y)}
+            key={`in-line-${s.label}`}
+            d={inPathFor(s.y)}
             stroke={s.color}
             strokeOpacity="0.25"
             strokeWidth="2"
@@ -30,17 +42,17 @@ export default function OrchestrationDiagram() {
           />
         ))}
 
-        {sources.map((s, i) => (
+        {inputs.map((s, i) => (
           <motion.circle
-            key={`dot-${s.label}`}
+            key={`in-dot-${s.label}`}
             r="3.5"
             fill={s.color}
-            style={{ offsetPath: `path("${pathFor(s.y)}")`, offsetRotate: '0deg' }}
+            style={{ offsetPath: `path("${inPathFor(s.y)}")`, offsetRotate: '0deg' }}
             initial={{ offsetDistance: '0%', opacity: 0 }}
             whileInView={{ offsetDistance: '100%', opacity: [0, 1, 1, 0] }}
             viewport={{ once: false }}
             transition={{
-              duration: 2,
+              duration: 1.8,
               repeat: Infinity,
               ease: 'linear',
               delay: 1.2 + i * 0.35,
@@ -49,9 +61,9 @@ export default function OrchestrationDiagram() {
           />
         ))}
 
-        {sources.map((s, i) => (
+        {inputs.map((s, i) => (
           <motion.g
-            key={s.label}
+            key={`in-card-${s.label}`}
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -59,16 +71,16 @@ export default function OrchestrationDiagram() {
           >
             <rect
               x="10"
-              y={s.y - 18}
+              y={s.y - 16}
               width="140"
-              height="36"
-              rx="14"
+              height="32"
+              rx="12"
               fill="white"
               fillOpacity="0.85"
               stroke="#212B3718"
             />
-            <circle cx="30" cy={s.y} r="4" fill={s.color} />
-            <text x="44" y={s.y + 4} fontSize="11" fill="#212B37" fontFamily="Inter, sans-serif">
+            <circle cx="28" cy={s.y} r="4" fill={s.color} />
+            <text x="42" y={s.y + 4} fontSize="11" fill="#212B37" fontFamily="Inter, sans-serif">
               {s.label}
             </text>
           </motion.g>
@@ -80,18 +92,18 @@ export default function OrchestrationDiagram() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          <circle cx="300" cy="160" r="34" fill="#3A21CE" />
+          <circle cx={HUB.x} cy={HUB.y} r={HUB.r} fill="#3A21CE" />
           <motion.circle
-            cx="300"
-            cy="160"
-            r="34"
+            cx={HUB.x}
+            cy={HUB.y}
+            r={HUB.r}
             fill="#3A21CE"
             opacity="0.15"
-            animate={{ r: [34, 44, 34], opacity: [0.15, 0, 0.15] }}
+            animate={{ r: [HUB.r, HUB.r + 10, HUB.r], opacity: [0.15, 0, 0.15] }}
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           />
           <path
-            d="M290 160l7 7 14-14"
+            d={`M${HUB.x - 10} ${HUB.y}l7 7 14-14`}
             stroke="white"
             strokeWidth="3"
             strokeLinecap="round"
@@ -99,47 +111,63 @@ export default function OrchestrationDiagram() {
           />
         </motion.g>
 
-        <motion.path
-          d={decisionPath}
-          stroke="#3A21CE"
-          strokeWidth="2"
-          strokeOpacity="0.4"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 1 }}
-        />
-        <motion.circle
-          r="3.5"
-          fill="#3A21CE"
-          style={{ offsetPath: `path("${decisionPath}")`, offsetRotate: '0deg' }}
-          initial={{ offsetDistance: '0%', opacity: 0 }}
-          whileInView={{ offsetDistance: '100%', opacity: [0, 1, 1, 0] }}
-          viewport={{ once: false }}
-          transition={{ duration: 1, repeat: Infinity, ease: 'linear', delay: 1.6, repeatDelay: 1.4 }}
-        />
-
-        <motion.g
-          initial={{ opacity: 0, x: 10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1.1 }}
-        >
-          <rect
-            x="330"
-            y="120"
-            width="80"
-            height="80"
-            rx="20"
-            fill="white"
-            fillOpacity="0.85"
-            stroke="#212B3718"
+        {outputs.map((o, i) => (
+          <motion.path
+            key={`out-line-${o.label}`}
+            d={outPathFor(o.y)}
+            stroke={o.color}
+            strokeWidth="2"
+            strokeOpacity="0.3"
+            initial={{ pathLength: 0 }}
+            whileInView={{ pathLength: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.9 + i * 0.1, ease: 'easeOut' }}
           />
-          <rect x="342" y="136" width="56" height="6" rx="2" fill="#EF5996" />
-          <rect x="342" y="150" width="40" height="6" rx="2" fill="#212B3733" />
-          <rect x="342" y="164" width="48" height="6" rx="2" fill="#212B3733" />
-          <rect x="342" y="178" width="30" height="6" rx="2" fill="#48BBE7" />
-        </motion.g>
+        ))}
+
+        {outputs.map((o, i) => (
+          <motion.circle
+            key={`out-dot-${o.label}`}
+            r="3.5"
+            fill={o.color}
+            style={{ offsetPath: `path("${outPathFor(o.y)}")`, offsetRotate: '0deg' }}
+            initial={{ offsetDistance: '0%', opacity: 0 }}
+            whileInView={{ offsetDistance: '100%', opacity: [0, 1, 1, 0] }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 1.4,
+              repeat: Infinity,
+              ease: 'linear',
+              delay: 1.7 + i * 0.3,
+              repeatDelay: 0.6,
+            }}
+          />
+        ))}
+
+        {outputs.map((o, i) => (
+          <motion.g
+            key={`out-card-${o.label}`}
+            initial={{ opacity: 0, x: 10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.1 + i * 0.1 }}
+          >
+            <rect
+              x="470"
+              y={o.y - 15}
+              width="130"
+              height="30"
+              rx="12"
+              fill="white"
+              fillOpacity="0.85"
+              stroke="#212B3718"
+            />
+            <circle cx="487" cy={o.y} r="4" fill={o.color} />
+            <text x="500" y={o.y + 3.5} fontSize="10" fill="#212B37" fontFamily="Inter, sans-serif">
+              {o.label}
+            </text>
+          </motion.g>
+        ))}
       </svg>
     </div>
   )

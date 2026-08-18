@@ -15,11 +15,11 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Testimonials />
         <Blueprint />
         <Pillars />
         <Differentiators />
         <RoiCalculator />
-        <Testimonials />
         <Faq />
         <FinalCta />
       </main>

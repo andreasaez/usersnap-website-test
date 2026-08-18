@@ -6,17 +6,11 @@ export const nav = [
 ]
 
 export const hero = {
-  eyebrow: 'The product evidence platform',
-  h1: 'Grounded decisions at the speed of AI',
+  h1: 'The product evidence platform for enterprise teams',
   sub: 'Usersnap orchestrates every signal across your tool stack the moment it appears. Solve problems and generate solutions with AI-guarded data that drives impact from day one.',
   primaryCta: 'Start for free',
   secondaryCta: 'Take a tour',
   note: 'No credit card required. Setup takes under ten minutes.',
-}
-
-export const logoBar = {
-  label: 'Trusted by enterprise product teams at',
-  logos: ['Canva', 'Runtastic', 'Dynatrace', 'Erste Group'],
 }
 
 export const blueprint = {
@@ -73,7 +67,7 @@ export const pillars = {
 }
 
 export const differentiators = {
-  kicker: 'What sets Usersnap apart',
+  kicker: 'Why Usersnap',
   heading: 'Built on orchestration, reporting, and guardrails you can trust',
   items: [
     {
@@ -86,7 +80,11 @@ export const differentiators = {
     },
     {
       title: 'Guardrails you can trust',
-      body: 'Usersnap’s AI stays scoped to the signal your team actually collects, keeping every insight traceable back to its source.',
+      body: 'Usersnap pairs AI with the guardrails, security, and trust controls your team needs to act with confidence.',
+    },
+    {
+      title: 'Zero-friction implementation',
+      body: 'One code snippet connects Usersnap to your stack in under ten minutes. There’s no taxonomy to build and no data-volume threshold to clear before AI features start working. Get started on day one.',
     },
   ],
 }
@@ -170,6 +168,6 @@ export const faqs = [
 
 export const finalCta = {
   heading: 'Usersnap is where the work happens for you.',
-  sub: 'See your first customer signal orchestrated before the week is out.',
+  sub: 'Snap your first customer signal before the week is out.',
   primaryCta: 'Start for free',
 }
