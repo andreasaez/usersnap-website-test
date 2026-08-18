@@ -56,7 +56,7 @@ export const hero = {
   sub: 'Usersnap orchestrates every signal across your tool stack the moment it appears. Solve problems and generate solutions with AI-guarded data that drives impact from day one.',
   primaryCta: 'Start for free',
   secondaryCta: 'Take a tour',
-  note: 'No credit card required. Setup takes under ten minutes.',
+  note: 'Snap for free in under 10 mins. No credit card required.',
 }
 
 export const blueprint = {
