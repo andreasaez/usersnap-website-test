@@ -1,0 +1,85 @@
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
+import { blueprint } from '../data/content'
+import Reveal from './Reveal'
+import BlueprintStack from '../illustrations/BlueprintStack'
+import GradientBackdrop from './GradientBackdrop'
+
+const accents = ['#48BBE7', '#3A21CE', '#EF5996', '#FB585B']
+
+export default function Blueprint() {
+  const [active, setActive] = useState(0)
+
+  return (
+    <section id="blueprint" className="relative overflow-hidden bg-mist py-24">
+      <GradientBackdrop />
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-purple">{blueprint.label}</p>
+          <h2 className="mt-4 text-balance text-2xl font-bold leading-snug tracking-tight text-ink sm:text-3xl">
+            {blueprint.kicker}
+          </h2>
+          <p className="mt-4 text-lg text-ink-soft">{blueprint.sub}</p>
+        </Reveal>
+
+        <Reveal delay={0.15} className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="order-2 flex justify-center lg:order-1">
+            <BlueprintStack active={active} count={blueprint.steps.length} />
+          </div>
+
+          <div className="order-1 divide-y divide-ink/10 overflow-hidden rounded-3xl border border-white/60 bg-white/70 shadow-[0_20px_60px_-25px_rgba(58,33,206,0.25)] backdrop-blur-xl lg:order-2">
+            {blueprint.steps.map((step, i) => {
+              const isActive = i === active
+              return (
+                <div key={step.id}>
+                  <button
+                    type="button"
+                    onClick={() => setActive(i)}
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors"
+                    style={{ backgroundColor: isActive ? '#3A21CE0d' : 'transparent' }}
+                    aria-expanded={isActive}
+                  >
+                    <span className="flex items-center gap-3">
+                      <span
+                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white"
+                        style={{ backgroundColor: accents[i % accents.length] }}
+                      >
+                        {i + 1}
+                      </span>
+                      <span className="text-sm font-semibold uppercase tracking-wide text-ink sm:text-base">
+                        {step.label}
+                      </span>
+                    </span>
+                    <motion.span
+                      animate={{ rotate: isActive ? 45 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-purple-faint text-purple"
+                    >
+                      +
+                    </motion.span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isActive && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-5 pl-16">
+                          <p className="text-sm font-semibold text-ink">{step.title}</p>
+                          <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.body}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )
+            })}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
