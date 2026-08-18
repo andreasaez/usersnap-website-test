@@ -22,7 +22,12 @@ export default function Blueprint() {
           <p className="mt-4 text-lg text-ink-soft">{blueprint.sub}</p>
         </Reveal>
 
-        <Reveal delay={0.15} className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <Reveal className="mt-16 grid gap-2 text-center lg:grid-cols-2 lg:gap-16 lg:text-left">
+          <div className="hidden lg:block" />
+          <p className="text-lg font-semibold text-purple">{blueprint.cardsLabel}</p>
+        </Reveal>
+
+        <Reveal delay={0.15} className="mt-8 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="order-2 flex justify-center lg:order-1">
             <BlueprintStack active={active} count={blueprint.steps.length} />
           </div>
@@ -67,7 +72,7 @@ export default function Blueprint() {
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-5 pl-16">
+                        <div className="px-6 pt-3 pb-5 pl-16">
                           <p className="text-sm font-semibold text-ink">{step.title}</p>
                           <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.body}</p>
                           <a

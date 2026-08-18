@@ -1,5 +1,51 @@
 export const nav = [
-  { label: 'Platform', href: '#blueprint' },
+  {
+    label: 'Platform',
+    href: '#blueprint',
+    children: [
+      {
+        label: 'Research & Discovery',
+        href: '#',
+        description: 'Validate decisions with evidence traced to its source.',
+        icon: 'research',
+      },
+      {
+        label: 'Workflows & Orchestration',
+        href: '#',
+        description: 'Connect every tool in your stack automatically.',
+        icon: 'workflows',
+      },
+      {
+        label: 'Roadmaps',
+        href: '#',
+        description: 'Link every roadmap item to the evidence behind it.',
+        icon: 'roadmaps',
+      },
+      {
+        label: 'Feedback Collection',
+        href: '#',
+        description: 'Collect visual feedback, surveys, and NPS in one place.',
+        icon: 'feedback',
+      },
+      {
+        label: 'Customer Engagement',
+        href: '#',
+        description: 'Engage with customers via announcements, change logs, and email.',
+        icon: 'engagement',
+      },
+    ],
+  },
+  {
+    label: 'Solutions',
+    children: [
+      { label: 'For Product', href: '#' },
+      { label: 'For Product Marketing', href: '#' },
+      { label: 'For Customer Success', href: '#' },
+      { label: 'For Support', href: '#' },
+      { label: 'For Development', href: '#' },
+      { label: 'For Research', href: '#' },
+    ],
+  },
   { label: 'How it works', href: '#pillars' },
   { label: 'Customers', href: '#customers' },
   { label: 'FAQ', href: '#faq' },
@@ -17,6 +63,7 @@ export const blueprint = {
   label: 'Product blueprint',
   kicker: 'Nothing costs more than building the wrong features.',
   sub: 'A four-step blueprint that turns scattered customer signals into evidence-backed product work.',
+  cardsLabel: 'As easy as one, two, snap.',
   steps: [
     {
       id: 'connect',
@@ -75,20 +122,28 @@ export const differentiators = {
   heading: 'Built on orchestration, reporting, and guardrails you can trust',
   items: [
     {
-      title: 'Automatic, continuous orchestration',
-      body: 'Every signal connects the moment it appears, across every tool already in your stack, without manual exports or one-off syncs to maintain.',
-    },
-    {
-      title: 'Evidence-to-impact reporting',
-      body: 'Every roadmap item links back to the research that shaped it and the outcome it drove, so reviews turn into a walkthrough of proof leadership already trusts.',
-    },
-    {
-      title: 'Guardrails you can trust',
-      body: 'Usersnap pairs AI with the guardrails, security, and trust controls your team needs to act with confidence.',
-    },
-    {
+      icon: 'implementation',
       title: 'Zero-friction implementation',
       body: 'One code snippet connects Usersnap to your stack in under ten minutes. There’s no taxonomy to build and no data-volume threshold to clear before AI features start working. Get started on day one.',
+      href: '#',
+    },
+    {
+      icon: 'orchestration',
+      title: 'Automatic, continuous orchestration',
+      body: 'Every signal connects the moment it appears, across every tool already in your stack, without manual exports or one-off syncs to maintain.',
+      href: '#',
+    },
+    {
+      icon: 'reporting',
+      title: 'Evidence-to-impact reporting',
+      body: 'Every roadmap item links back to the research that shaped it and the outcome it drove, so reviews turn into a walkthrough of proof leadership already trusts.',
+      href: '#',
+    },
+    {
+      icon: 'guardrails',
+      title: 'Guardrails you can trust',
+      body: 'Usersnap pairs AI with the guardrails, security, and trust controls your team needs to act with confidence.',
+      href: '#',
     },
   ],
 }
@@ -101,7 +156,7 @@ export const roiDefaults = {
 }
 
 export const roiCopy = {
-  kicker: 'Measure impact',
+  kicker: 'Impact',
   heading: 'What AI hallucinations are costing your team',
   sub: 'Building without guardrails is costing your team every release. See how Usersnap can help you save money.',
   disclaimer:
