@@ -2,36 +2,48 @@ export const nav = [
   {
     label: 'Platform',
     href: '#blueprint',
-    children: [
+    columns: [
       {
-        label: 'Research & Discovery',
-        href: '#',
-        description: 'Validate decisions with evidence traced to its source.',
-        icon: 'research',
+        children: [
+          {
+            label: 'Research & Discovery',
+            href: '#',
+            description: 'Validate decisions with evidence traced to its source.',
+            icon: 'research',
+          },
+          {
+            label: 'Workflows & Orchestration',
+            href: '#',
+            description: 'Connect every tool in your stack automatically.',
+            icon: 'workflows',
+          },
+          {
+            label: 'Roadmaps',
+            href: '#',
+            description: 'Link every roadmap item to the evidence behind it.',
+            icon: 'roadmaps',
+          },
+          {
+            label: 'Feedback Collection',
+            href: '#',
+            description: 'Collect visual feedback, surveys, and NPS in one place.',
+            icon: 'feedback',
+          },
+          {
+            label: 'Customer Engagement',
+            href: '#',
+            description: 'Engage with customers via announcements, change logs, and email.',
+            icon: 'engagement',
+          },
+        ],
       },
       {
-        label: 'Workflows & Orchestration',
-        href: '#',
-        description: 'Connect every tool in your stack automatically.',
-        icon: 'workflows',
-      },
-      {
-        label: 'Roadmaps',
-        href: '#',
-        description: 'Link every roadmap item to the evidence behind it.',
-        icon: 'roadmaps',
-      },
-      {
-        label: 'Feedback Collection',
-        href: '#',
-        description: 'Collect visual feedback, surveys, and NPS in one place.',
-        icon: 'feedback',
-      },
-      {
-        label: 'Customer Engagement',
-        href: '#',
-        description: 'Engage with customers via announcements, change logs, and email.',
-        icon: 'engagement',
+        heading: 'Under the hood',
+        children: [
+          { label: 'How it works', href: '#pillars' },
+          { label: 'The Product Blueprint', href: '#blueprint' },
+          { label: 'Integrations', href: '#' },
+        ],
       },
     ],
   },
@@ -46,9 +58,9 @@ export const nav = [
       { label: 'For Research', href: '#' },
     ],
   },
-  { label: 'How it works', href: '#pillars' },
   { label: 'Customers', href: '#customers' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Resources', href: '#' },
+  { label: 'Pricing', href: '#' },
 ]
 
 export const hero = {
