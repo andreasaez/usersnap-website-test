@@ -15,12 +15,18 @@ export default function FinalCta() {
                 {finalCta.heading}
               </h2>
               <p className="mt-4 text-lg text-white/70">{finalCta.sub}</p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <a
                   href="#book-demo"
                   className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-ink transition-colors hover:bg-white/90"
                 >
                   {finalCta.primaryCta}
+                </a>
+                <a
+                  href="#book-demo"
+                  className="rounded-full border border-white/30 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                >
+                  {finalCta.secondaryCta}
                 </a>
               </div>
             </div>

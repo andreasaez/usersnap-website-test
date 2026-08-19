@@ -9,15 +9,6 @@ export default function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-8 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="text-center lg:text-left">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-5 text-sm font-semibold uppercase tracking-wide text-purple"
-          >
-            {hero.eyebrow}
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}

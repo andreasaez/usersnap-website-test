@@ -51,14 +51,9 @@ export const nav = [
     label: 'Solutions',
     children: [
       {
-        label: 'Move at the speed of AI',
+        label: 'Spot trending problems',
         href: '#',
-        description: 'Keep every roadmap call grounded in evidence that updates as fast as your team ships.',
-      },
-      {
-        label: 'Centralize feedback',
-        href: '#',
-        description: 'Every ticket, survey, and comment in one place, automatically.',
+        description: 'Catch what is trending early, with evidence that updates as fast as your team ships.',
       },
       {
         label: 'Prevent churn',
@@ -66,19 +61,24 @@ export const nav = [
         description: 'Spot patterns behind an at-risk account and make informed decisions that drive impact.',
       },
       {
+        label: 'Validate ideas',
+        href: '#',
+        description: 'Test ideas against real feedback before you build.',
+      },
+      {
+        label: 'Build with evidence',
+        href: '#',
+        description: 'Get product, support, and sales aligned on the same evidence before you build.',
+      },
+      {
         label: 'Close the feedback loop',
         href: '#',
         description: 'Tell every customer what shipped, automatically.',
       },
       {
-        label: 'Build with evidence',
+        label: 'Become an AI-enabled team',
         href: '#',
-        description: 'Every feature ships with the customer proof behind it.',
-      },
-      {
-        label: 'Validate ideas',
-        href: '#',
-        description: 'Test ideas against real feedback before you build.',
+        description: 'AI generates the hypotheses, prototypes, and solutions your team can act on immediately.',
       },
     ],
   },
@@ -88,11 +88,10 @@ export const nav = [
 ]
 
 export const hero = {
-  eyebrow: 'The product evidence platform',
-  h1: 'Grounded decisions at the speed of AI',
-  sub: 'Usersnap turns every ticket, call, and email into the hypotheses, prototypes, and solutions backed by real evidence.',
-  primaryCta: 'Start for free',
-  secondaryCta: 'Book a demo',
+  h1: 'The product evidence platform for enterprise teams',
+  sub: 'Usersnap orchestrates every tool in your stack, generates build-ready solutions, and guards every output with evidence, turning product discovery into an always-on retention engine.',
+  primaryCta: 'Book a demo',
+  secondaryCta: 'Start for free',
   note: 'Snap for free in under 10 mins. No credit card required.',
 }
 
@@ -298,5 +297,6 @@ export const faqs = [
 export const finalCta = {
   heading: 'Usersnap is where the work happens for you.',
   sub: 'Snap your first customer signal before the week is out.',
-  primaryCta: 'Start for free',
+  primaryCta: 'Book a demo',
+  secondaryCta: 'Start for free',
 }
