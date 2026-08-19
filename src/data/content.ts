@@ -266,7 +266,7 @@ export const testimonials = [
 export const faqs = [
   {
     q: 'What is a product evidence platform?',
-    a: 'A product evidence platform automates the everyday work of collecting, connecting, and reporting on customer feedback, guarded by AI scoped to what your team actually collects. Usersnap connects every piece of feedback to the decision it drove, so your team spends less time on synthesis and more on strategy.',
+    a: 'Every roadmap tool claims to deliver customer feedback or product insights, which is why those words don’t carry much weight anymore. Evidence is the harder standard: feedback traced from its original ticket or call through the decision it shaped to the outcome that followed. Usersnap keeps that chain intact automatically, so when someone in a roadmap review asks why a feature shipped, the answer already exists.',
   },
   {
     q: 'How is Usersnap different from Productboard or Jira Product Discovery?',
