@@ -50,12 +50,36 @@ export const nav = [
   {
     label: 'Solutions',
     children: [
-      { label: 'For Product', href: '#' },
-      { label: 'For Product Marketing', href: '#' },
-      { label: 'For Customer Success', href: '#' },
-      { label: 'For Support', href: '#' },
-      { label: 'For Development', href: '#' },
-      { label: 'For Research', href: '#' },
+      {
+        label: 'Move at the speed of AI',
+        href: '#',
+        description: 'Keep every roadmap call grounded in evidence that updates as fast as your team ships.',
+      },
+      {
+        label: 'Centralize feedback',
+        href: '#',
+        description: 'Every ticket, survey, and comment in one place, automatically.',
+      },
+      {
+        label: 'Prevent churn',
+        href: '#',
+        description: 'Spot patterns behind an at-risk account and make informed decisions that drive impact.',
+      },
+      {
+        label: 'Close the feedback loop',
+        href: '#',
+        description: 'Tell every customer what shipped, automatically.',
+      },
+      {
+        label: 'Build with evidence',
+        href: '#',
+        description: 'Every feature ships with the customer proof behind it.',
+      },
+      {
+        label: 'Validate ideas',
+        href: '#',
+        description: 'Test ideas against real feedback before you build.',
+      },
     ],
   },
   { label: 'Customers', href: '#customers' },
@@ -64,17 +88,18 @@ export const nav = [
 ]
 
 export const hero = {
-  h1: 'The product evidence platform for enterprise teams',
-  sub: 'Usersnap orchestrates every signal across your tool stack the moment it appears. Solve problems and generate solutions with AI-guarded data that drives impact from day one.',
+  eyebrow: 'The product evidence platform',
+  h1: 'Grounded decisions at the speed of AI',
+  sub: 'Usersnap turns every ticket, call, and email into the hypotheses, prototypes, and solutions backed by real evidence.',
   primaryCta: 'Start for free',
-  secondaryCta: 'Take a tour',
+  secondaryCta: 'Book a demo',
   note: 'Snap for free in under 10 mins. No credit card required.',
 }
 
 export const blueprint = {
   label: 'Product blueprint',
   kicker: 'Nothing costs more than building the wrong features.',
-  sub: 'A four-step blueprint that turns scattered customer signals into evidence-backed product work.',
+  sub: 'A four-step blueprint for turning scattered feedback into evidence-backed decisions.',
   cardsLabel: 'As easy as one, two, snap.',
   steps: [
     {
@@ -146,7 +171,7 @@ export const pillars = {
     },
     {
       title: 'Integrations & Workflows',
-      body: 'Usersnap connects automatically to the tools already in your stack, including support, sales, analytics, and MCP-enabled AI, so signal flows without manual exports or one-off syncs.',
+      body: 'Usersnap connects automatically to the tools already in your stack, including support, sales, analytics, and MCP-enabled AI, so data flows without manual exports or one-off syncs.',
       features: [
         'MCP',
         'AI tagging',
@@ -175,7 +200,7 @@ export const differentiators = {
     {
       icon: 'orchestration',
       title: 'Automatic, continuous orchestration',
-      body: 'Every signal connects the moment it appears, across every tool already in your stack, without manual exports or one-off syncs to maintain.',
+      body: 'Every tool in your stack connects automatically, without manual exports or one-off syncs to maintain.',
       href: '#',
     },
     {
@@ -242,19 +267,19 @@ export const testimonials = [
 export const faqs = [
   {
     q: 'What is a product evidence platform?',
-    a: 'A product evidence platform orchestrates and automates the everyday work of collecting, connecting, and reporting on customer signal, guarded by AI that stays scoped to what your team actually collects. It handles that low-level work automatically, freeing product managers to focus on building the right thing, backed by the right evidence. Usersnap is built for exactly this, connecting every signal to the decision and outcome it drove, so your team moves faster and spends more time on alignment and strategy.',
+    a: 'A product evidence platform automates the everyday work of collecting, connecting, and reporting on customer feedback, guarded by AI scoped to what your team actually collects. Usersnap connects every piece of feedback to the decision it drove, so your team spends less time on synthesis and more on strategy.',
   },
   {
     q: 'How is Usersnap different from Productboard or Jira Product Discovery?',
-    a: 'Productboard is solution-led and complex to configure before it delivers value. Jira Product Discovery orchestrates signal only within the Atlassian suite. Usersnap orchestrates every signal automatically, continuously, and across tools it doesn’t own or sell, from the first piece of feedback you collect.',
+    a: 'Productboard is solution-led and complex to configure before it delivers value. Jira Product Discovery only connects tools inside the Atlassian suite. Usersnap connects across your entire stack automatically, from the first piece of feedback you collect.',
   },
   {
     q: 'Do we need to build a taxonomy or hit a data-volume threshold before AI features work?',
     a: 'No. Usersnap activates from the first piece of feedback. There’s no taxonomy to build and no minimum feedback volume to clear before AI categorization and pattern surfacing start working.',
   },
   {
-    q: 'How long does it take to get customer signal flowing?',
-    a: 'A single code snippet connects Usersnap to your stack. Teams typically see AI-categorized signal in their first sprint planning session within days, compared to the 2 to 8 weeks typical of enterprise platform onboarding.',
+    q: 'How long does it take to get customer feedback flowing?',
+    a: 'A single code snippet connects Usersnap to your stack. Teams typically see AI-categorized feedback in their first sprint planning session within days, compared to the 2 to 8 weeks typical of enterprise platform onboarding.',
   },
   {
     q: 'Can Usersnap replace multiple tools already in our stack?',

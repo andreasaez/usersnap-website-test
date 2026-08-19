@@ -65,6 +65,18 @@ function DropdownItem({ child }: { child: NavChild }) {
     )
   }
 
+  if (child.description) {
+    return (
+      <a
+        href={child.href}
+        className="block rounded-xl px-4 py-2.5 transition-colors hover:bg-purple-faint"
+      >
+        <span className="block text-sm font-semibold text-ink">{child.label}</span>
+        <span className="mt-0.5 block text-xs leading-snug text-ink-faint">{child.description}</span>
+      </a>
+    )
+  }
+
   return (
     <a
       href={child.href}
