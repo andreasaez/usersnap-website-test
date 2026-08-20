@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { Link } from 'react-router-dom'
 import { nav, hero } from '../data/content'
 import logo from '../assets/logo.svg'
 
@@ -6,8 +7,6 @@ const iconAccents: Record<string, string> = {
   research: '#48BBE7',
   workflows: '#3A21CE',
   roadmaps: '#EF5996',
-  feedback: '#FB585B',
-  engagement: '#48BBE7',
 }
 
 const icons: Record<string, React.ReactNode> = {
@@ -26,13 +25,6 @@ const icons: Record<string, React.ReactNode> = {
     </>
   ),
   roadmaps: <path d="M5 3v18M5 4h11l-2 4 2 4H5" strokeLinecap="round" strokeLinejoin="round" />,
-  feedback: <path d="M4 4.5h16v11H8.5L4 19V4.5z" strokeLinecap="round" strokeLinejoin="round" />,
-  engagement: (
-    <>
-      <path d="M3 10v4h3l7 4V6l-7 4H3z" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M15 9.5a4 4 0 010 5" strokeLinecap="round" />
-    </>
-  ),
 }
 
 type NavChild = {
@@ -42,10 +34,38 @@ type NavChild = {
   icon?: string
 }
 
+// Internal routes (no hash) use client-side Link; anchors on the homepage use a plain <a>.
+function isInternalRoute(href: string) {
+  return href.startsWith('/') && !href.includes('#')
+}
+
+function NavAnchor({
+  href,
+  className,
+  children,
+}: {
+  href: string
+  className: string
+  children: React.ReactNode
+}) {
+  if (isInternalRoute(href)) {
+    return (
+      <Link to={href} className={className}>
+        {children}
+      </Link>
+    )
+  }
+  return (
+    <a href={href} className={className}>
+      {children}
+    </a>
+  )
+}
+
 function DropdownItem({ child }: { child: NavChild }) {
   if (child.icon) {
     return (
-      <a
+      <NavAnchor
         href={child.href}
         className="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-purple-faint"
       >
@@ -61,29 +81,29 @@ function DropdownItem({ child }: { child: NavChild }) {
           <span className="block text-sm font-semibold text-ink">{child.label}</span>
           <span className="mt-0.5 block text-xs leading-snug text-ink-faint">{child.description}</span>
         </span>
-      </a>
+      </NavAnchor>
     )
   }
 
   if (child.description) {
     return (
-      <a
+      <NavAnchor
         href={child.href}
         className="block rounded-xl px-4 py-2.5 transition-colors hover:bg-purple-faint"
       >
         <span className="block text-sm font-semibold text-ink">{child.label}</span>
         <span className="mt-0.5 block text-xs leading-snug text-ink-faint">{child.description}</span>
-      </a>
+      </NavAnchor>
     )
   }
 
   return (
-    <a
+    <NavAnchor
       href={child.href}
       className="block rounded-xl px-4 py-2.5 text-sm font-medium text-ink-soft transition-colors hover:bg-purple-faint hover:text-purple"
     >
       {child.label}
-    </a>
+    </NavAnchor>
   )
 }
 
@@ -91,9 +111,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#top" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={logo} alt="Usersnap" className="h-6 w-auto" />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((item) => {
@@ -153,7 +173,18 @@ export default function Header() {
                             ))}
                           </div>
                         ))
-                      : item.children!.map((child) => <DropdownItem key={child.label} child={child} />)}
+                      : (
+                          <div className="p-1">
+                            {'heading' in item && item.heading && (
+                              <p className="px-3 pt-1.5 pb-1 text-xs font-semibold uppercase tracking-wide text-ink-faint">
+                                {item.heading}
+                              </p>
+                            )}
+                            {item.children!.map((child) => (
+                              <DropdownItem key={child.label} child={child} />
+                            ))}
+                          </div>
+                        )}
                   </motion.div>
                 </div>
               </div>

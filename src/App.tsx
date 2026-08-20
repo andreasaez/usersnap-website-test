@@ -1,30 +1,21 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Blueprint from './components/Blueprint'
-import Pillars from './components/Pillars'
-import Differentiators from './components/Differentiators'
-import RoiCalculator from './components/RoiCalculator'
-import Testimonials from './components/Testimonials'
-import Faq from './components/Faq'
-import FinalCta from './components/FinalCta'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import ResearchDiscoveryPage from './pages/ResearchDiscoveryPage'
+import RoadmapsPage from './pages/RoadmapsPage'
+import IntegrationsPage from './pages/IntegrationsPage'
+import IntegrationsDirectoryPage from './pages/IntegrationsDirectoryPage'
+import McpPage from './pages/McpPage'
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Testimonials />
-        <Blueprint />
-        <Pillars />
-        <Differentiators />
-        <RoiCalculator />
-        <Faq />
-        <FinalCta />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/platform/research-discovery" element={<ResearchDiscoveryPage />} />
+      <Route path="/platform/roadmaps" element={<RoadmapsPage />} />
+      <Route path="/platform/integrations" element={<IntegrationsPage />} />
+      <Route path="/integrations" element={<IntegrationsDirectoryPage />} />
+      <Route path="/mcp" element={<McpPage />} />
+    </Routes>
   )
 }
 

@@ -7,48 +7,37 @@ export const nav = [
         children: [
           {
             label: 'Research & Discovery',
-            href: '#',
-            description: 'Validate decisions with evidence traced to its source.',
+            href: '/platform/research-discovery',
+            description: 'Validate decisions with customer feedback traced to its source.',
             icon: 'research',
           },
           {
-            label: 'Workflows & Orchestration',
-            href: '#',
-            description: 'Connect every tool in your stack automatically.',
-            icon: 'workflows',
-          },
-          {
             label: 'Roadmaps',
-            href: '#',
-            description: 'Link every roadmap item to the evidence behind it.',
+            href: '/platform/roadmaps',
+            description: 'Spot trends automatically and prioritize with confidence.',
             icon: 'roadmaps',
           },
           {
-            label: 'Feedback Collection',
-            href: '#',
-            description: 'Collect visual feedback, surveys, and NPS in one place.',
-            icon: 'feedback',
-          },
-          {
-            label: 'Customer Engagement',
-            href: '#',
-            description: 'Engage with customers via announcements, change logs, and email.',
-            icon: 'engagement',
+            label: 'Integrations',
+            href: '/platform/integrations',
+            description: 'Connect every tool in your stack automatically.',
+            icon: 'workflows',
           },
         ],
       },
       {
         heading: 'Under the hood',
         children: [
-          { label: 'How it works', href: '#pillars' },
-          { label: 'The Product Blueprint', href: '#blueprint' },
-          { label: 'Integrations', href: '#' },
+          { label: 'How it works', href: '/#pillars' },
+          { label: 'The Product Blueprint', href: '/#blueprint' },
+          { label: 'MCP', href: '/mcp' },
         ],
       },
     ],
   },
   {
     label: 'Solutions',
+    heading: 'Use cases',
     children: [
       {
         label: 'Spot trending problems',
@@ -56,19 +45,19 @@ export const nav = [
         description: 'Catch what is trending early, with evidence that updates as fast as your team ships.',
       },
       {
-        label: 'Prevent churn',
-        href: '#',
-        description: 'Spot patterns behind an at-risk account and make informed decisions that drive impact.',
-      },
-      {
         label: 'Validate ideas',
         href: '#',
-        description: 'Test ideas against real feedback before you build.',
+        description: 'Gather feedback directly from customers and validate ideas fast.',
       },
       {
         label: 'Build with evidence',
         href: '#',
         description: 'Get product, support, and sales aligned on the same evidence before you build.',
+      },
+      {
+        label: 'Grow product value',
+        href: '#',
+        description: 'Spot patterns, prioritize features, and drive adoption every release.',
       },
       {
         label: 'Close the feedback loop',
@@ -87,9 +76,72 @@ export const nav = [
   { label: 'Pricing', href: '#' },
 ]
 
+export const platformPages = {
+  researchDiscovery: {
+    kicker: 'Platform',
+    heading: 'Research & Discovery',
+    body: 'All the customer feedback your team collects, from support tickets to sales notes to in-app comments, connects automatically and gets tagged back to its source the moment it appears.',
+    features: [
+      'Support tickets',
+      'Surveys',
+      'CSAT',
+      'NPS',
+      'Transcripts',
+      'In-app visual feedback',
+      'Announcements',
+      'Email replies',
+      'Changelog',
+    ],
+  },
+  roadmaps: {
+    kicker: 'Platform',
+    heading: 'Roadmaps',
+    body: 'Link feedback directly to outcomes, build hypotheses, and score with insights top of mind.',
+    features: [
+      'Custom scoring',
+      'Hypotheses',
+      'AI prototypes',
+      'Opportunity trends',
+      'Priority tracking',
+      'Now, Next, Later roadmap',
+      'Solution generation',
+    ],
+  },
+  integrations: {
+    kicker: 'Platform',
+    heading: 'Integrations',
+    body: 'Usersnap connects automatically to the tools already in your stack, including support, sales, analytics, and MCP-enabled AI, so data flows without manual exports or one-off syncs.',
+    features: ['AI tagging', 'Channel data ingestion', 'Sentiment analysis', 'Cross-platform orchestration'],
+    relatedPages: [
+      {
+        label: 'Browse integrations',
+        href: '/integrations',
+        description: 'See every tool Usersnap connects to out of the box.',
+      },
+      {
+        label: 'MCP',
+        href: '/mcp',
+        description: "How Usersnap works as a data layer for AI agents.",
+      },
+    ],
+  },
+}
+
+export const integrationsDirectory = {
+  kicker: 'Integrations',
+  heading: 'Every tool in your stack, connected automatically',
+  body: 'A directory of every integration Usersnap connects to natively, from support and sales platforms to analytics and AI tooling.',
+}
+
+export const mcpPage = {
+  kicker: 'Under the hood',
+  heading: 'MCP',
+  body: "Usersnap's evidence layer is reachable from the AI tools already in your workflow through the Model Context Protocol.",
+}
+
 export const hero = {
   h1: 'The product evidence platform for enterprise teams',
-  sub: 'Every tool, every customer, every conversation orchestrated. Usersnap generates build-ready solutions and guards every output with evidence, so your product keeps growing, release after release.',
+  sub: 'Every tool, every customer, every conversation orchestrated. Usersnap generates build-ready solutions and guards every output with evidence, so growth compounds release after release.',
   primaryCta: 'Book a demo',
   secondaryCta: 'Start for free',
   note: 'Snap for free in under 10 mins. No credit card required.',
