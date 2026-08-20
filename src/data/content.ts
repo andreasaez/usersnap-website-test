@@ -29,7 +29,7 @@ export const nav = [
         heading: 'Under the hood',
         children: [
           { label: 'How it works', href: '/#pillars' },
-          { label: 'The Product Blueprint', href: '/#blueprint' },
+          { label: 'Security & Compliance', href: '/security' },
           { label: 'MCP', href: '/mcp' },
         ],
       },
@@ -133,6 +133,12 @@ export const integrationsDirectory = {
   body: 'A directory of every integration Usersnap connects to natively, from support and sales platforms to analytics and AI tooling.',
 }
 
+export const securityPage = {
+  kicker: 'Under the hood',
+  heading: 'Security & Compliance',
+  body: 'One platform, one data agreement, and one security review instead of five. Access controls apply at the data layer, and documentation is available for IT, security, and procurement review.',
+}
+
 export const mcpPage = {
   kicker: 'Under the hood',
   heading: 'MCP',
@@ -148,9 +154,11 @@ export const hero = {
 }
 
 export const blueprint = {
-  label: 'Product blueprint',
+  label: 'The Product Blueprint',
   kicker: 'Nothing costs more than building the wrong features.',
   sub: 'A four-step blueprint for turning scattered feedback into evidence-backed decisions.',
+  cta: 'See how it works',
+  ctaHref: '#pillars',
   cardsLabel: 'As easy as one, two, snap.',
   steps: [
     {
@@ -186,6 +194,8 @@ export const blueprint = {
 
 export const pillars = {
   heading: 'Built for enterprise product builders',
+  cta: 'Learn more',
+  ctaHref: '#',
   items: [
     {
       title: 'Research & Discovery',
@@ -269,19 +279,58 @@ export const differentiators = {
   ],
 }
 
-export const roiDefaults = {
-  numPMs: 8,
-  hoursPerWeek: 6,
-  hourlyCost: 85,
-  reductionRate: 0.7,
-}
-
-export const roiCopy = {
-  kicker: 'Impact',
-  heading: 'What AI hallucinations are costing your team',
-  sub: 'Building without guardrails is costing your team every release. See how Usersnap can help you save money.',
-  disclaimer:
-    'Estimates only, based on industry benchmarks for manual feedback synthesis time and a 70% reduction assumption from automated orchestration. Actual results vary by team.',
+export const howWeWin = {
+  kicker: 'Competitive landscape',
+  heading: 'How we win',
+  sub: 'No single category of tool does the whole job. That’s why Usersnap works as a product evidence platform instead.',
+  categories: [
+    {
+      name: 'Feedback tools',
+      competitors: 'Canny, Marker, Refiner',
+      redOcean: '50+ competitors',
+      cost: '$7K-10K',
+      promise: 'Helps you understand why.',
+      gap: 'Value stops at insight collection. Commoditized.',
+    },
+    {
+      name: 'Engagement tools',
+      competitors: 'Beamer, ProductFruits',
+      redOcean: '20+ competitors',
+      cost: '$5K-20K',
+      promise: 'Grows activation through education.',
+      gap: 'Value stops at awareness. Low value offering.',
+    },
+    {
+      name: 'Research tools',
+      competitors: 'Dovetail, Enterpret, Maze, Userpilot',
+      redOcean: '30+ competitors',
+      cost: '$25K-50K',
+      promise: 'Finds the problems that matter.',
+      gap: 'Value stops at problem prioritization, and stops short of a solution.',
+    },
+    {
+      name: 'Roadmapping tools',
+      competitors: 'Productboard, Aha, Jira Product Discovery, Airfocus',
+      redOcean: '20+ competitors',
+      cost: '$90K-100K',
+      promise: 'Speeds up planning and alignment.',
+      gap: 'Value stops at planning, with no read on whether it paid off.',
+    },
+    {
+      name: 'AI platforms',
+      competitors: 'Claude, OpenAI, Perplexity',
+      redOcean: null,
+      cost: '$150K',
+      promise: 'AI will make your life better.',
+      gap: 'A pain to set up and maintain, with your data left unscoped.',
+    },
+  ],
+  usersnap: {
+    name: 'Product evidence platform',
+    cost: '$25K-35K',
+    promise: 'All of the above.',
+    gap: 'Value spans teams, tools, and workflows.',
+  },
 }
 
 export const testimonials = [

@@ -20,6 +20,12 @@ export default function Blueprint() {
             {blueprint.kicker}
           </h2>
           <p className="mt-4 text-lg text-ink-soft">{blueprint.sub}</p>
+          <a
+            href={blueprint.ctaHref}
+            className="mt-6 inline-block rounded-full border border-purple px-6 py-3 text-sm font-semibold text-purple transition-colors hover:bg-purple-faint"
+          >
+            {blueprint.cta}
+          </a>
         </Reveal>
 
         <Reveal className="mt-16 grid gap-2 text-center lg:grid-cols-2 lg:gap-16 lg:text-left">

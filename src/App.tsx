@@ -5,6 +5,7 @@ import RoadmapsPage from './pages/RoadmapsPage'
 import IntegrationsPage from './pages/IntegrationsPage'
 import IntegrationsDirectoryPage from './pages/IntegrationsDirectoryPage'
 import McpPage from './pages/McpPage'
+import SecurityPage from './pages/SecurityPage'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/platform/integrations" element={<IntegrationsPage />} />
       <Route path="/integrations" element={<IntegrationsDirectoryPage />} />
       <Route path="/mcp" element={<McpPage />} />
+      <Route path="/security" element={<SecurityPage />} />
     </Routes>
   )
 }

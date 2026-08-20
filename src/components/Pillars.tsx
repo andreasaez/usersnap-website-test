@@ -9,6 +9,12 @@ export default function Pillars() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">{pillars.heading}</h2>
+          <a
+            href={pillars.ctaHref}
+            className="mt-6 inline-block rounded-full border border-purple px-6 py-3 text-sm font-semibold text-purple transition-colors hover:bg-purple-faint"
+          >
+            {pillars.cta}
+          </a>
         </Reveal>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">

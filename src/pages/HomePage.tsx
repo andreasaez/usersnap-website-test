@@ -3,7 +3,7 @@ import Hero from '../components/Hero'
 import Blueprint from '../components/Blueprint'
 import Pillars from '../components/Pillars'
 import Differentiators from '../components/Differentiators'
-import RoiCalculator from '../components/RoiCalculator'
+import HowWeWin from '../components/HowWeWin'
 import Testimonials from '../components/Testimonials'
 import Faq from '../components/Faq'
 import FinalCta from '../components/FinalCta'
@@ -19,7 +19,7 @@ export default function HomePage() {
         <Blueprint />
         <Pillars />
         <Differentiators />
-        <RoiCalculator />
+        <HowWeWin />
         <Faq />
         <FinalCta />
       </main>
