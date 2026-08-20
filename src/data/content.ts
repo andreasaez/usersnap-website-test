@@ -29,8 +29,8 @@ export const nav = [
         heading: 'Under the hood',
         children: [
           { label: 'How it works', href: '/#pillars' },
-          { label: 'Security & Compliance', href: '/security' },
           { label: 'MCP', href: '/mcp' },
+          { label: 'Security & Compliance', href: '/security' },
         ],
       },
     ],
