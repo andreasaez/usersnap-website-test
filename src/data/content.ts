@@ -89,7 +89,7 @@ export const nav = [
 
 export const hero = {
   h1: 'The product evidence platform for enterprise teams',
-  sub: 'Usersnap orchestrates every tool in your stack, generates build-ready solutions, and guards every output with evidence, turning product discovery into an always-on retention engine.',
+  sub: 'Every tool, every customer, every conversation orchestrated. Usersnap generates build-ready solutions and guards every output with evidence, so your product keeps growing, release after release.',
   primaryCta: 'Book a demo',
   secondaryCta: 'Start for free',
   note: 'Snap for free in under 10 mins. No credit card required.',
