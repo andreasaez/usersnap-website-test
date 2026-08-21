@@ -154,7 +154,7 @@ export const agenticActionsPage = {
 
 export const hero = {
   h1: 'The product evidence platform for enterprise teams',
-  sub: 'Every tool, every customer, every conversation orchestrated. Usersnap generates build-ready ideas and guards every output with evidence, so growth compounds release after release.',
+  sub: 'Every tool, every customer, every conversation connected. Usersnap generates build-ready ideas and guards every output with evidence, orchestrating every action so growth compounds release after release.',
   primaryCta: 'Book a demo',
   secondaryCta: 'Start for free',
   note: 'Snap for free in under 10 mins. No credit card required.',
