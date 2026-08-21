@@ -147,7 +147,7 @@ export const mcpPage = {
 
 export const hero = {
   h1: 'The product evidence platform for enterprise teams',
-  sub: 'Every tool, every customer, every conversation orchestrated. Usersnap generates build-ready solutions and guards every output with evidence, so growth compounds release after release.',
+  sub: 'Every tool, every customer, every conversation orchestrated. Usersnap generates build-ready ideas and guards every output with evidence, so growth compounds release after release.',
   primaryCta: 'Book a demo',
   secondaryCta: 'Start for free',
   note: 'Snap for free in under 10 mins. No credit card required.',
@@ -156,7 +156,7 @@ export const hero = {
 export const blueprint = {
   label: 'The Product Blueprint',
   kicker: 'Nothing costs more than building the wrong features.',
-  sub: 'A four-step blueprint for turning scattered feedback into evidence-backed decisions.',
+  sub: 'Turn scattered feedback into evidence-backed decisions in four steps.',
   cta: 'See how it works',
   ctaHref: '#pillars',
   cardsLabel: 'As easy as one, two, snap.',
