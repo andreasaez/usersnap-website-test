@@ -30,6 +30,7 @@ export const nav = [
         children: [
           { label: 'How it works', href: '/#pillars' },
           { label: 'MCP', href: '/mcp' },
+          { label: 'Agentic Actions', href: '/agentic-actions' },
           { label: 'Security & Compliance', href: '/security' },
         ],
       },
@@ -143,6 +144,12 @@ export const mcpPage = {
   kicker: 'Under the hood',
   heading: 'MCP',
   body: "Usersnap's evidence layer is reachable from the AI tools already in your workflow through the Model Context Protocol.",
+}
+
+export const agenticActionsPage = {
+  kicker: 'Under the hood',
+  heading: 'Agentic Actions',
+  body: 'Agentic Actions is the layer that turns everything Research & Discovery, Roadmaps, and Integrations surface into reporting, recommendations, and automated prompts, so evidence becomes something your team acts on, rather than a report it only reads.',
 }
 
 export const hero = {
