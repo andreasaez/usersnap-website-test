@@ -154,7 +154,7 @@ export const agenticActionsPage = {
 
 export const hero = {
   eyebrow: 'The product evidence platform',
-  h1: 'Extraordinary products need\nextraordinary evidence',
+  h1: 'The world’s best products need\nextraordinary evidence',
   sub: 'Usersnap generates build-ready ideas and guards every output with evidence, orchestrating every action so growth compounds release after release.',
   primaryCta: 'Book a demo',
   secondaryCta: 'Start for free',
