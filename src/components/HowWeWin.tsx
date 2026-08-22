@@ -56,7 +56,7 @@ export default function HowWeWin() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-purple">{howWeWin.kicker}</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{howWeWin.heading}</h2>
-          <p className="mt-4 text-lg text-ink-soft">{howWeWin.sub}</p>
+          <p className="mt-4 whitespace-pre-line text-lg text-ink-soft">{howWeWin.sub}</p>
         </Reveal>
 
         <Reveal delay={0.15} className="mt-12">

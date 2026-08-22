@@ -153,8 +153,9 @@ export const agenticActionsPage = {
 }
 
 export const hero = {
-  h1: 'The product evidence platform for enterprise teams',
-  sub: 'Every tool, every customer, every conversation connected. Usersnap generates build-ready ideas and guards every output with evidence, orchestrating every action so growth compounds release after release.',
+  eyebrow: 'The product evidence platform',
+  h1: 'Extraordinary products need\nextraordinary evidence',
+  sub: 'Usersnap generates build-ready ideas and guards every output with evidence, orchestrating every action so growth compounds release after release.',
   primaryCta: 'Book a demo',
   secondaryCta: 'Start for free',
   note: 'Snap for free in under 10 mins. No credit card required.',
@@ -257,7 +258,7 @@ export const pillars = {
 
 export const differentiators = {
   kicker: 'Why Usersnap',
-  heading: 'Built on orchestration, reporting, and guardrails you can trust',
+  heading: 'Orchestration, reporting, and guardrails you can trust',
   items: [
     {
       icon: 'implementation',
@@ -287,9 +288,9 @@ export const differentiators = {
 }
 
 export const howWeWin = {
-  kicker: 'Competitive landscape',
-  heading: 'How we win',
-  sub: 'No single category of tool does the whole job. That’s why Usersnap works as a product evidence platform instead.',
+  kicker: 'How we win',
+  heading: 'Why global teams love Usersnap',
+  sub: 'The market split product decisions into five categories.\nUsersnap put it back together as a single platform.',
   categories: [
     {
       name: 'Feedback tools',
