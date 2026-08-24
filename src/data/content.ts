@@ -12,7 +12,7 @@ export const nav = [
             icon: 'research',
           },
           {
-            label: 'Roadmaps',
+            label: 'Roadmaps & Reporting',
             href: '/platform/roadmaps',
             description: 'Spot trends automatically and prioritize with confidence.',
             icon: 'roadmaps',
@@ -96,8 +96,8 @@ export const platformPages = {
   },
   roadmaps: {
     kicker: 'Platform',
-    heading: 'Roadmaps',
-    body: 'Link feedback directly to outcomes, build hypotheses, and score with insights top of mind.',
+    heading: 'Roadmaps & Reporting',
+    body: 'Spot trends, build hypotheses, and let agentic reporting guide you on what to build next.',
     features: [
       'Custom scoring',
       'Hypotheses',
@@ -222,8 +222,8 @@ export const pillars = {
       href: '#',
     },
     {
-      title: 'Roadmaps',
-      body: 'Link feedback directly to outcomes, build hypotheses, and score with insights top of mind.',
+      title: 'Roadmaps & Reporting',
+      body: 'Spot trends, build hypotheses, and let agentic reporting guide you on what to build next.',
       features: [
         'Custom scoring',
         'Hypotheses',
