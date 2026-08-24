@@ -154,7 +154,7 @@ export const agenticActionsPage = {
 
 export const hero = {
   eyebrow: 'The product evidence platform',
-  h1: 'The world’s best products need\nextraordinary evidence',
+  h1: 'Extraordinary evidence powers the world’s best products',
   sub: 'Usersnap generates build-ready ideas and guards every output with evidence, orchestrating every action so growth compounds release after release.',
   primaryCta: 'Book a demo',
   secondaryCta: 'Start for free',
@@ -408,4 +408,10 @@ export const finalCta = {
   sub: 'Snap your first customer signal before the week is out.',
   primaryCta: 'Book a demo',
   secondaryCta: 'Start for free',
+}
+
+export const footer = {
+  tagline: 'Every tool, every customer, every conversation orchestrated. Get started in a snap.',
+  cta: 'Book a demo',
+  ctaHref: '#book-demo',
 }
