@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { faqs } from '../data/content'
+import { faqs, hero } from '../data/content'
 import Reveal from './Reveal'
 import GradientBackdrop from './GradientBackdrop'
 
@@ -10,19 +10,38 @@ export default function Faq() {
   return (
     <section id="faq" className="relative overflow-hidden py-24">
       <GradientBackdrop />
-      <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        <Reveal className="text-center">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            Frequently asked questions
-          </h2>
-        </Reveal>
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-start lg:gap-16">
+          <Reveal>
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+              Frequently asked questions
+            </h2>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#book-demo"
+                className="rounded-full bg-purple px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-dark"
+              >
+                {hero.primaryCta}
+              </a>
+              <a
+                href="#book-demo"
+                className="rounded-full border border-purple px-6 py-3 text-sm font-semibold text-purple transition-colors hover:bg-purple-faint"
+              >
+                {hero.secondaryCta}
+              </a>
+            </div>
+          </Reveal>
 
-        <div className="mt-12 flex flex-col gap-4">
-          {faqs.map((item, i) => {
-            const isOpen = open === i
-            return (
-              <Reveal key={item.q} delay={i * 0.05}>
-                <div className="rounded-2xl border border-sage/40 bg-gradient-to-b from-purple-faint to-white shadow-[0_16px_40px_-24px_rgba(58,33,192,0.18)] backdrop-blur-sm">
+          <Reveal delay={0.1} className="flex flex-col gap-4">
+            {faqs.map((item, i) => {
+              const isOpen = open === i
+              return (
+                <div
+                  key={item.q}
+                  className={`overflow-hidden rounded-2xl border transition-colors ${
+                    isOpen ? 'border-purple/25 bg-purple-faint' : 'border-sage/40 bg-white'
+                  }`}
+                >
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? null : i)}
@@ -33,7 +52,7 @@ export default function Faq() {
                     <motion.span
                       animate={{ rotate: isOpen ? 45 : 0 }}
                       transition={{ duration: 0.2 }}
-                      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-purple-faint text-purple"
+                      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-purple"
                     >
                       +
                     </motion.span>
@@ -48,9 +67,9 @@ export default function Faq() {
                     <p className="px-6 pb-5 text-sm leading-relaxed text-ink-soft">{item.a}</p>
                   </motion.div>
                 </div>
-              </Reveal>
-            )
-          })}
+              )
+            })}
+          </Reveal>
         </div>
       </div>
     </section>
