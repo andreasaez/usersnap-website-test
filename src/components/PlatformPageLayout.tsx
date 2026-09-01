@@ -32,7 +32,7 @@ export default function PlatformPageLayout({
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <Reveal>
               <p className="text-sm font-semibold uppercase tracking-wide text-purple">{kicker}</p>
-              <h1 className="mt-3 text-4xl font-bold tracking-tight text-ink sm:text-5xl">{heading}</h1>
+              <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{heading}</h1>
               <p className="mt-6 max-w-2xl text-lg text-ink-soft">{body}</p>
             </Reveal>
 
@@ -42,7 +42,7 @@ export default function PlatformPageLayout({
                   {features.map((feature) => (
                     <span
                       key={feature}
-                      className="rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-sm text-ink-soft backdrop-blur-xl"
+                      className="rounded-full border border-sage/40 bg-white/80 px-4 py-1.5 text-sm text-ink-soft backdrop-blur-md"
                     >
                       {feature}
                     </span>
@@ -59,7 +59,7 @@ export default function PlatformPageLayout({
                     <Link
                       key={page.href}
                       to={page.href}
-                      className="block rounded-2xl border border-ink/10 bg-white/70 p-5 backdrop-blur-xl transition-colors hover:border-purple/30 hover:bg-purple-faint"
+                      className="block rounded-2xl border border-sage/40 bg-white/80 p-5 backdrop-blur-md transition-colors hover:border-purple/30 hover:bg-purple-faint"
                     >
                       <span className="block text-base font-semibold text-ink">{page.label}</span>
                       <span className="mt-1 block text-sm leading-relaxed text-ink-faint">

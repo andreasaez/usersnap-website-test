@@ -1,14 +1,21 @@
+import { useState } from 'react'
 import { pillars } from '../data/content'
 import Reveal from './Reveal'
 import GradientBackdrop from './GradientBackdrop'
+import SnappyPanel from '../illustrations/SnappyPanel'
+
+const accents = ['#3A21C0', '#7071A0', '#899ED7']
 
 export default function Pillars() {
+  const [active, setActive] = useState(0)
+
   return (
     <section id="pillars" className="relative overflow-hidden py-24">
       <GradientBackdrop />
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">{pillars.heading}</h2>
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">{pillars.heading}</h2>
+          <p className="mt-4 whitespace-pre-line text-lg text-ink-soft">{pillars.sub}</p>
           <a
             href={pillars.ctaHref}
             className="mt-6 inline-block rounded-full border border-purple px-6 py-3 text-sm font-semibold text-purple transition-colors hover:bg-purple-faint"
@@ -17,38 +24,59 @@ export default function Pillars() {
           </a>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {pillars.items.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.1}>
-              <div className="flex h-full flex-col rounded-3xl border border-white/60 bg-white/70 p-8 shadow-[0_20px_60px_-25px_rgba(58,33,206,0.25)] backdrop-blur-xl">
-                <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">{item.body}</p>
-                <ul className="mt-5 flex-1 grid grid-cols-2 gap-x-3 gap-y-2">
-                  {item.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-xs text-ink-soft">
-                      <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-purple-faint">
-                        <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="none" stroke="#3A21CE">
-                          <path
-                            d="M2.5 6.2l2.2 2.2 4.8-4.8"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={item.href}
-                  className="mt-5 text-sm font-semibold text-purple transition-colors hover:text-purple-dark"
+        <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <Reveal className="order-2 lg:order-1">
+            <SnappyPanel active={active} />
+          </Reveal>
+
+          <Reveal delay={0.1} className="order-1 flex flex-col gap-2 lg:order-2">
+            {pillars.items.map((item, i) => {
+              const isActive = i === active
+              return (
+                <button
+                  key={item.title}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  aria-pressed={isActive}
+                  className="cursor-pointer rounded-2xl border-l-2 py-4 pl-5 pr-4 text-left transition-colors hover:bg-mist/60"
+                  style={{
+                    borderColor: isActive ? accents[i % accents.length] : 'rgba(46,49,70,0.1)',
+                    backgroundColor: isActive ? accents[i % accents.length] + '0d' : undefined,
+                  }}
                 >
-                  Learn more &rarr;
-                </a>
-              </div>
-            </Reveal>
-          ))}
+                  <div className="flex items-center gap-2.5">
+                    <span
+                      className="h-2 w-2 shrink-0 rounded-full transition-opacity"
+                      style={{ backgroundColor: accents[i % accents.length], opacity: isActive ? 1 : 0.4 }}
+                    />
+                    <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">{item.body}</p>
+                  {isActive && (
+                    <>
+                      <div className="mt-3 flex flex-wrap gap-1.5">
+                        {item.features.map((feature) => (
+                          <span
+                            key={feature}
+                            className="rounded-full border border-sage/40 bg-white px-2.5 py-1 text-xs text-ink-soft"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                      <a
+                        href={item.href}
+                        onClick={(e) => e.stopPropagation()}
+                        className="mt-3 inline-block text-sm font-semibold text-purple transition-colors hover:text-purple-dark"
+                      >
+                        Learn more &rarr;
+                      </a>
+                    </>
+                  )}
+                </button>
+              )
+            })}
+          </Reveal>
         </div>
       </div>
     </section>

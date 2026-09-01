@@ -2,29 +2,18 @@ import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import { nav, hero } from '../data/content'
 import logo from '../assets/logo.svg'
+import { icons as iconSet } from '../icons'
 
 const iconAccents: Record<string, string> = {
-  research: '#48BBE7',
-  workflows: '#3A21CE',
-  roadmaps: '#EF5996',
+  research: '#3A21C0',
+  workflows: '#7071A0',
+  roadmaps: '#3A21C0',
 }
 
 const icons: Record<string, React.ReactNode> = {
-  research: (
-    <>
-      <circle cx="10" cy="10" r="6" />
-      <path d="M14.5 14.5L19 19" strokeLinecap="round" />
-    </>
-  ),
-  workflows: (
-    <>
-      <circle cx="6" cy="6" r="2" />
-      <circle cx="18" cy="6" r="2" />
-      <circle cx="12" cy="18" r="2" />
-      <path d="M7.7 7L11 16M16.3 7L13 16M8 6H16" strokeLinecap="round" />
-    </>
-  ),
-  roadmaps: <path d="M5 3v18M5 4h11l-2 4 2 4H5" strokeLinecap="round" strokeLinejoin="round" />,
+  research: iconSet.research,
+  workflows: iconSet.orchestration,
+  roadmaps: iconSet.roadmapping,
 }
 
 type NavChild = {

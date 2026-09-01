@@ -1,20 +1,21 @@
 import { motion } from 'motion/react'
+import { snappyGlyph20 } from '../icons'
 
 const HUB = { x: 300, y: 175, r: 34 }
 
 const inputs = [
-  { label: 'Support tickets', y: 40, color: '#48BBE7' },
-  { label: 'Sales calls', y: 113, color: '#EF5996' },
-  { label: 'In-app comments', y: 186, color: '#3A21CE' },
-  { label: 'Surveys', y: 259, color: '#FB585B' },
+  { label: 'Support tickets', y: 40, color: '#899ED7' },
+  { label: 'Sales calls', y: 113, color: '#7071A0' },
+  { label: 'In-app comments', y: 186, color: '#3A21C0' },
+  { label: 'Surveys', y: 259, color: '#7071A0' },
 ]
 
 const outputs = [
-  { label: 'Hypotheses', y: 15, color: '#3A21CE' },
-  { label: 'Prototypes', y: 90, color: '#EF5996' },
-  { label: 'Trending problems', y: 165, color: '#FB585B' },
-  { label: 'Sentiment', y: 240, color: '#48BBE7' },
-  { label: 'Solutions', y: 315, color: '#3A21CE' },
+  { label: 'Hypotheses', y: 15, color: '#3A21C0' },
+  { label: 'Prototypes', y: 90, color: '#7071A0' },
+  { label: 'Trending problems', y: 165, color: '#899ED7' },
+  { label: 'Sentiment', y: 240, color: '#7071A0' },
+  { label: 'Solutions', y: 315, color: '#3A21C0' },
 ]
 
 const inPathFor = (y: number) =>
@@ -25,7 +26,7 @@ const outPathFor = (y: number) =>
 export default function OrchestrationDiagram() {
   return (
     <div className="relative w-full max-w-xl">
-      <div className="absolute -inset-10 -z-10 rounded-full bg-gradient-to-br from-purple-faint via-sky/10 to-pink/10 blur-2xl" />
+      <div className="absolute -inset-10 -z-10 rounded-full bg-gradient-to-br from-purple-faint via-sky/10 to-sage/10 blur-2xl" />
 
       <svg viewBox="0 0 610 360" className="w-full" fill="none">
         {inputs.map((s, i) => (
@@ -77,10 +78,10 @@ export default function OrchestrationDiagram() {
               rx="12"
               fill="white"
               fillOpacity="0.85"
-              stroke="#212B3718"
+              stroke="#2E314618"
             />
             <circle cx="28" cy={s.y} r="4" fill={s.color} />
-            <text x="42" y={s.y + 4} fontSize="11" fill="#212B37" fontFamily="Inter, sans-serif">
+            <text x="42" y={s.y + 4} fontSize="11" fill="#2E3146" fontFamily="Inter, sans-serif">
               {s.label}
             </text>
           </motion.g>
@@ -92,23 +93,33 @@ export default function OrchestrationDiagram() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          <circle cx={HUB.x} cy={HUB.y} r={HUB.r} fill="#3A21CE" />
+          <defs>
+            {/* Snappy's own mark color — the fixed gradient from the dashboard's
+                agent dock, kept as-is so the mascot reads as the same character
+                across surfaces rather than being retinted to the site palette. */}
+            <linearGradient id="snappyGradient" x1="15%" y1="10%" x2="85%" y2="90%">
+              <stop offset="0%" stopColor="#392CCB" />
+              <stop offset="100%" stopColor="#7D2AE8" />
+            </linearGradient>
+          </defs>
+          <circle cx={HUB.x} cy={HUB.y} r={HUB.r} fill="url(#snappyGradient)" />
           <motion.circle
             cx={HUB.x}
             cy={HUB.y}
             r={HUB.r}
-            fill="#3A21CE"
+            fill="url(#snappyGradient)"
             opacity="0.15"
             animate={{ r: [HUB.r, HUB.r + 10, HUB.r], opacity: [0.15, 0, 0.15] }}
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           />
-          <path
-            d={`M${HUB.x - 10} ${HUB.y}l7 7 14-14`}
+          <g
+            transform={`translate(${HUB.x - 13} ${HUB.y - 13}) scale(1.3)`}
             stroke="white"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+            strokeWidth="1.4"
+            fill="none"
+          >
+            {snappyGlyph20}
+          </g>
         </motion.g>
 
         {outputs.map((o, i) => (
@@ -160,10 +171,10 @@ export default function OrchestrationDiagram() {
               rx="12"
               fill="white"
               fillOpacity="0.85"
-              stroke="#212B3718"
+              stroke="#2E314618"
             />
             <circle cx="487" cy={o.y} r="4" fill={o.color} />
-            <text x="500" y={o.y + 3.5} fontSize="10" fill="#212B37" fontFamily="Inter, sans-serif">
+            <text x="500" y={o.y + 3.5} fontSize="10" fill="#2E3146" fontFamily="Inter, sans-serif">
               {o.label}
             </text>
           </motion.g>

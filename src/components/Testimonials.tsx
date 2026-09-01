@@ -4,14 +4,14 @@ import GradientBackdrop from './GradientBackdrop'
 
 const tints = [
   'from-purple-faint to-white',
-  'from-pink/10 to-white',
   'from-sky/10 to-white',
-  'from-red/10 to-white',
+  'from-sage/15 to-white',
+  'from-slate/10 to-white',
 ]
 
 export default function Testimonials() {
   return (
-    <section id="customers" className="relative overflow-hidden py-24">
+    <section id="customers" className="relative overflow-hidden pt-4 pb-16">
       <GradientBackdrop />
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="text-center">
@@ -24,7 +24,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08} className="h-full">
               <div
-                className={`flex h-full flex-col justify-between rounded-3xl border border-white/60 bg-gradient-to-b p-6 shadow-[0_20px_60px_-25px_rgba(58,33,206,0.25)] backdrop-blur-xl ${tints[i % tints.length]}`}
+                className={`flex h-full flex-col justify-between rounded-3xl border border-sage/40 bg-gradient-to-b p-6 shadow-[0_16px_40px_-24px_rgba(58,33,192,0.18)] backdrop-blur-md ${tints[i % tints.length]}`}
               >
                 <p className="text-sm leading-relaxed text-ink">“{t.quote}”</p>
                 <div className="mt-6">

@@ -4,25 +4,39 @@
 @import '@fontsource/inter/latin-600.css';
 @import '@fontsource/inter/latin-700.css';
 @import '@fontsource/inter/latin-800.css';
+@import '@fontsource/geist-sans/latin-500.css';
+@import '@fontsource/geist-sans/latin-600.css';
+@import '@fontsource/geist-sans/latin-700.css';
 
+/*
+  Brand direction v1 (2026-09): Inter stays for body/UI, Geist Sans carries
+  headline moments — the clean, neutral grotesk register Stripe uses, kept
+  distinct from Inter rather than doubling up on the same face everywhere.
+  One indigo signal instead of a rainbow of accents; --color-ink doubles as
+  body-text ink and the one deliberate dark surface.
+*/
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Geist Sans', 'Inter', system-ui, -apple-system, sans-serif;
 
-  --color-ink: #212b37;
-  --color-ink-soft: #212b3799;
-  --color-ink-faint: #212b3766;
+  --color-ink: #2e3146;
+  --color-ink-soft: #2e3146b8;
+  --color-ink-faint: #2e314680;
 
-  --color-purple: #3a21ce;
-  --color-purple-dark: #2c19a3;
-  --color-purple-soft: #3a21ce14;
-  --color-purple-faint: #3a21ce0d;
+  --color-purple: #3a21c0;
+  --color-purple-dark: #2c1897;
+  --color-purple-soft: #3a21c014;
+  --color-purple-faint: #3a21c00d;
 
-  --color-pink: #ef5996;
-  --color-red: #fb585b;
-  --color-sky: #48bbe7;
+  /* dark accent — muted secondary text/borders, reserved for the dark surface */
+  --color-slate: #7071a0;
+  /* light accent — the one warm highlight against --color-ink, dark surfaces only */
+  --color-sky: #899ed7;
+  /* neutral — a hair warmer than flat gray; hairlines, dividers, quiet borders */
+  --color-sage: #b3beb3;
 
   --color-paper: #ffffff;
-  --color-mist: #f6f5fb;
+  --color-mist: #f3f5f1;
 }
 
 html {

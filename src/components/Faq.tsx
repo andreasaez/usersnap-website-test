@@ -12,12 +12,12 @@ export default function Faq() {
       <GradientBackdrop />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <Reveal className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
             Frequently asked questions
           </h2>
         </Reveal>
 
-        <div className="mt-12 divide-y divide-ink/10 overflow-hidden rounded-3xl border border-white/60 bg-white/70 shadow-[0_20px_60px_-25px_rgba(58,33,206,0.25)] backdrop-blur-xl">
+        <div className="mt-12 divide-y divide-ink/10 overflow-hidden rounded-3xl border border-sage/40 bg-white/80 shadow-[0_16px_40px_-24px_rgba(58,33,192,0.18)] backdrop-blur-md">
           {faqs.map((item, i) => {
             const isOpen = open === i
             return (

@@ -22,7 +22,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="whitespace-pre-line text-3xl font-bold leading-[1.15] tracking-tight text-ink sm:text-4xl"
+            className="whitespace-pre-line font-display text-3xl font-semibold leading-[1.12] tracking-tight text-ink sm:text-4xl"
           >
             {hero.h1}
           </motion.h1>
