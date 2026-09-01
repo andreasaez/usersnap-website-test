@@ -6,6 +6,7 @@ import Differentiators from '../components/Differentiators'
 import HowWeWin from '../components/HowWeWin'
 import Testimonials from '../components/Testimonials'
 import Faq from '../components/Faq'
+import ProofScale from '../components/ProofScale'
 import FinalCta from '../components/FinalCta'
 import Footer from '../components/Footer'
 
@@ -21,6 +22,7 @@ export default function HomePage() {
         <Differentiators />
         <HowWeWin />
         <Faq />
+        <ProofScale />
         <FinalCta />
       </main>
       <Footer />
