@@ -4,11 +4,7 @@ import { nav, hero } from '../data/content'
 import logo from '../assets/logo.svg'
 import { icons as iconSet } from '../icons'
 
-const iconAccents: Record<string, string> = {
-  research: '#3A21C0',
-  workflows: '#7071A0',
-  roadmaps: '#3A21C0',
-}
+const NAV_ICON_ACCENT = '#899ED7'
 
 const icons: Record<string, React.ReactNode> = {
   research: iconSet.research,
@@ -60,7 +56,7 @@ function DropdownItem({ child }: { child: NavChild }) {
       >
         <span
           className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl"
-          style={{ backgroundColor: iconAccents[child.icon] }}
+          style={{ backgroundColor: NAV_ICON_ACCENT }}
         >
           <svg viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none" stroke="white" strokeWidth="1.8">
             {icons[child.icon]}

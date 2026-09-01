@@ -11,7 +11,7 @@ export default function Blueprint() {
   const [active, setActive] = useState(0)
 
   return (
-    <section id="blueprint" className="relative overflow-hidden bg-mist py-24">
+    <section id="blueprint" className="relative overflow-hidden bg-mist/45 py-24">
       <GradientBackdrop />
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">

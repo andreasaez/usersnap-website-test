@@ -41,7 +41,7 @@ export default function SnappyPanel({ active }: { active: number }) {
         <div className="p-6">
           <div className="flex items-center gap-3 rounded-full border border-ink/10 bg-mist/70 px-4 py-3">
             <span
-              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
+              className="animate-snappy-breathe flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
               style={{ background: 'linear-gradient(135deg, #392CCB, #7D2AE8)' }}
             >
               <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="none" stroke="white" strokeWidth="1.6">

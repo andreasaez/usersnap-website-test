@@ -56,3 +56,13 @@ body {
   background: var(--color-purple);
   color: white;
 }
+
+/* Snappy's idle pulse — reserved for moments where Snappy is shown acting
+   (a suggestion row, an ask bar), not applied to every icon that uses the mark. */
+@keyframes snappy-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(57, 44, 203, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(57, 44, 203, 0); }
+}
+.animate-snappy-breathe {
+  animation: snappy-breathe 2.8s ease-in-out infinite;
+}

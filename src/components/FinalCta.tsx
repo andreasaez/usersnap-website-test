@@ -7,9 +7,6 @@ export default function FinalCta() {
       <div className="mx-auto max-w-full px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl bg-ink px-8 py-16 shadow-[0_30px_80px_-30px_rgba(33,43,55,0.6)] sm:px-16">
-            <div className="pointer-events-none absolute -top-24 -right-16 h-64 w-64 rounded-full bg-purple/30 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-sky/25 blur-3xl" />
-
             <div className="relative mx-auto max-w-2xl">
               <h2 className="text-balance font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 {finalCta.heading}

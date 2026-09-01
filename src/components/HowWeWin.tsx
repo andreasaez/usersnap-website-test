@@ -30,7 +30,7 @@ function CategoryIcon({ color, children }: { color: string; children: React.Reac
 
 export default function HowWeWin() {
   return (
-    <section id="how-we-win" className="relative overflow-hidden bg-mist py-24">
+    <section id="how-we-win" className="relative overflow-hidden bg-mist/45 py-24">
       <GradientBackdrop />
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">

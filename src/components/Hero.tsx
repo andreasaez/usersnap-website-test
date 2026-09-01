@@ -5,7 +5,17 @@ import OrchestrationDiagram from '../illustrations/OrchestrationDiagram'
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-16 pb-8">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-purple-faint via-white to-white" />
+      {/* The one aurora moment on the page — Snappy's own gradient, spent here and nowhere else */}
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            'radial-gradient(38% 60% at 78% 18%, rgba(57,44,203,0.22), transparent 68%),' +
+            'radial-gradient(42% 55% at 95% 55%, rgba(125,42,232,0.18), transparent 70%),' +
+            'radial-gradient(46% 50% at 68% 88%, rgba(137,158,215,0.22), transparent 72%)',
+          filter: 'blur(60px) saturate(130%)',
+        }}
+      />
 
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-8 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="text-center lg:text-left">

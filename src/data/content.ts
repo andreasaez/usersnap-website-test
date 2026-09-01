@@ -202,7 +202,7 @@ export const blueprint = {
 
 export const pillars = {
   heading: 'Built for enterprise product builders',
-  sub: 'Usersnap keeps research, roadmaps, and integrations on one evidence layer that scales with your team.',
+  sub: 'Bad data slows every team down. Usersnap orchestrates clean evidence across research, roadmaps, and integrations.',
   cta: 'Learn more',
   ctaHref: '#',
   items: [

@@ -26,8 +26,6 @@ const outPathFor = (y: number) =>
 export default function OrchestrationDiagram() {
   return (
     <div className="relative w-full max-w-xl">
-      <div className="absolute -inset-10 -z-10 rounded-full bg-gradient-to-br from-purple-faint via-sky/10 to-sage/10 blur-2xl" />
-
       <svg viewBox="0 0 610 360" className="w-full" fill="none">
         {inputs.map((s, i) => (
           <motion.path

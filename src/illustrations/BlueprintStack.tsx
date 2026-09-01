@@ -33,7 +33,7 @@ function SnappyRow({ children }: { children: React.ReactNode }) {
       transition={{ duration: 0.4, delay: 0.55 }}
     >
       <span
-        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
+        className="animate-snappy-breathe flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
         style={{ background: 'linear-gradient(135deg, #392CCB, #7D2AE8)' }}
       >
         <svg viewBox="0 0 20 20" className="h-3.5 w-3.5" fill="none" stroke="white" strokeWidth="1.6">
