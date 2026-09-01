@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'motion/react'
 import { pillars } from '../data/content'
 import Reveal from './Reveal'
 import GradientBackdrop from './GradientBackdrop'
@@ -52,27 +53,31 @@ export default function Pillars() {
                     <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
                   </div>
                   <p className="mt-2 text-sm leading-relaxed text-ink-soft">{item.body}</p>
-                  {isActive && (
-                    <>
-                      <div className="mt-3 flex flex-wrap gap-1.5">
-                        {item.features.map((feature) => (
-                          <span
-                            key={feature}
-                            className="rounded-full border border-sage/40 bg-white px-2.5 py-1 text-xs text-ink-soft"
-                          >
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                      <a
-                        href={item.href}
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-3 inline-block text-sm font-semibold text-purple transition-colors hover:text-purple-dark"
-                      >
-                        Learn more &rarr;
-                      </a>
-                    </>
-                  )}
+                  <motion.div
+                    initial={false}
+                    animate={{ height: isActive ? 'auto' : 0, opacity: isActive ? 1 : 0 }}
+                    transition={{ duration: 0.25, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                    aria-hidden={!isActive}
+                  >
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {item.features.map((feature) => (
+                        <span
+                          key={feature}
+                          className="rounded-full border border-sage/40 bg-white px-2.5 py-1 text-xs text-ink-soft"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      href={item.href}
+                      onClick={(e) => e.stopPropagation()}
+                      className="mt-3 inline-block text-sm font-semibold text-purple transition-colors hover:text-purple-dark"
+                    >
+                      Learn more &rarr;
+                    </a>
+                  </motion.div>
                 </button>
               )
             })}

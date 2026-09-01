@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { blueprint } from '../data/content'
 import Reveal from './Reveal'
 import BlueprintStack from '../illustrations/BlueprintStack'
@@ -68,28 +68,24 @@ export default function Blueprint() {
                       +
                     </motion.span>
                   </button>
-                  <AnimatePresence initial={false}>
-                    {isActive && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25, ease: 'easeInOut' }}
-                        className="overflow-hidden"
+                  <motion.div
+                    initial={false}
+                    animate={{ height: isActive ? 'auto' : 0, opacity: isActive ? 1 : 0 }}
+                    transition={{ duration: 0.25, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                    aria-hidden={!isActive}
+                  >
+                    <div className="px-6 pt-3 pb-5 pl-16">
+                      <p className="text-sm font-semibold text-ink">{step.title}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.body}</p>
+                      <a
+                        href={step.href}
+                        className="mt-3 inline-block text-sm font-semibold text-purple transition-colors hover:text-purple-dark"
                       >
-                        <div className="px-6 pt-3 pb-5 pl-16">
-                          <p className="text-sm font-semibold text-ink">{step.title}</p>
-                          <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.body}</p>
-                          <a
-                            href={step.href}
-                            className="mt-3 inline-block text-sm font-semibold text-purple transition-colors hover:text-purple-dark"
-                          >
-                            Learn more &rarr;
-                          </a>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                        Learn more &rarr;
+                      </a>
+                    </div>
+                  </motion.div>
                 </div>
               )
             })}
