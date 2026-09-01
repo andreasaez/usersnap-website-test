@@ -3,10 +3,10 @@ import Reveal from './Reveal'
 import GradientBackdrop from './GradientBackdrop'
 
 const tints = [
-  'from-purple-faint to-white',
-  'from-sky/10 to-white',
-  'from-sage/15 to-white',
-  'from-slate/10 to-white',
+  'from-sky/40 via-white to-white',
+  'from-[#10B981]/30 via-white to-white',
+  'from-purple/30 via-white to-white',
+  'from-[#EC4899]/30 via-white to-white',
 ]
 
 export default function Testimonials() {
