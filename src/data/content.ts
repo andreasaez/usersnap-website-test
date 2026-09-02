@@ -173,7 +173,7 @@ export const blueprint = {
       id: 'connect',
       label: 'Connect',
       title: 'Centralize feedback from every team and source',
-      body: 'Centralize feedback from every team and source in one place. A single code snippet connects Usersnap to your stack, so signal from support tickets, sales calls, and in-product sessions reaches your product team in a single view.',
+      body: 'Bring feedback from every team and source into one place. A single code snippet connects Usersnap to your stack, so signal from support tickets, sales calls, and in-product sessions reaches your product team in a single view.',
       href: '#',
     },
     {
@@ -269,14 +269,14 @@ export const differentiators = {
     },
     {
       icon: 'orchestration',
-      title: 'Automatic, continuous orchestration',
+      title: 'Continuous orchestration',
       body: 'Every tool in your stack connects automatically, without manual exports or one-off syncs to maintain.',
       href: '#',
     },
     {
       icon: 'reporting',
       title: 'Evidence-to-impact reporting',
-      body: 'Every roadmap item links back to the research that shaped it and the outcome it drove, so reviews turn into a walkthrough of proof leadership already trusts.',
+      body: 'Every insight and signal links back to the update it shaped. The data is ready anytime you need it.',
       href: '#',
     },
     {
@@ -382,7 +382,7 @@ export const faqs = [
   },
   {
     q: 'How long does it take to get customer feedback flowing?',
-    a: 'A single code snippet connects Usersnap to your stack. Teams typically see AI-categorized feedback in their first sprint planning session within days, compared to the 2 to 8 weeks typical of enterprise platform onboarding.',
+    a: 'A single code snippet connects Usersnap to your stack in under ten minutes. From there, AI-categorized feedback is ready before your next sprint planning session.',
   },
   {
     q: 'Can Usersnap replace multiple tools already in our stack?',
@@ -394,7 +394,7 @@ export const faqs = [
   },
   {
     q: 'Does the AI hallucinate or fabricate insights?',
-    a: 'Usersnap’s AI is scoped to the feedback you actually collect. It doesn’t reach into open-ended external data or synthesize claims beyond what your team has captured, which is the guardrail teams burned by general-purpose AI tools are looking for.',
+    a: 'Usersnap’s AI only works with the feedback you’ve actually collected. It doesn’t reach into open-ended external data or generate claims beyond what your team has captured. That’s a scope limit, not a performance promise.',
   },
 ]
 

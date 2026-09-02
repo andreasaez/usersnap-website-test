@@ -21,8 +21,8 @@ export default function HomePage() {
         <Pillars />
         <Differentiators />
         <HowWeWin />
-        <Faq />
         <ProofScale />
+        <Faq />
         <FinalCta />
       </main>
       <Footer />

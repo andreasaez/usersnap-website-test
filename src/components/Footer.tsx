@@ -4,7 +4,7 @@ import { footer } from '../data/content'
 export default function Footer() {
   return (
     <footer className="border-t border-ink/10 py-12">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-6 text-center lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col items-start gap-5 px-6 text-left lg:px-8">
         <img src={logo} alt="Usersnap" className="h-6 w-auto" />
         <p className="max-w-md text-sm font-medium text-ink">{footer.tagline}</p>
         <a
