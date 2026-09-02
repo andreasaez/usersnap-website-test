@@ -28,6 +28,19 @@ function CategoryIcon({ children }: { children: React.ReactNode }) {
   )
 }
 
+function CostInfoTooltip() {
+  return (
+    <span className="group relative inline-flex items-center">
+      <span className="ml-1 flex h-3.5 w-3.5 shrink-0 cursor-help items-center justify-center rounded-full border border-ink-faint text-[9px] font-bold normal-case text-ink-faint">
+        i
+      </span>
+      <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-52 -translate-x-1/2 rounded-lg bg-ink px-3 py-2 text-[11px] font-normal normal-case leading-snug text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+        Based on third party evaluation and research.
+      </span>
+    </span>
+  )
+}
+
 export default function HowWeWin() {
   return (
     <section id="how-we-win" className="relative overflow-hidden bg-mist/45 py-24">
@@ -46,6 +59,12 @@ export default function HowWeWin() {
                 <tr className="border-b border-ink/10 text-xs font-semibold uppercase tracking-wide text-ink-faint">
                   <th className="px-5 py-4">Category</th>
                   <th className="px-5 py-4">Named players</th>
+                  <th className="px-5 py-4">
+                    <span className="inline-flex items-center">
+                      Avg. cost
+                      <CostInfoTooltip />
+                    </span>
+                  </th>
                   <th className="px-5 py-4">Their promise</th>
                   <th className="px-5 py-4">The gap</th>
                 </tr>
@@ -65,6 +84,7 @@ export default function HowWeWin() {
                         <span className="mt-1 block text-xs font-medium text-ink-faint">{row.redOcean}</span>
                       )}
                     </td>
+                    <td className="px-5 py-4 whitespace-nowrap text-ink-soft">{row.cost}</td>
                     <td className="px-5 py-4 text-ink-soft">{row.promise}</td>
                     <td className="px-5 py-4 text-ink-faint">{row.gap}</td>
                   </tr>
@@ -80,6 +100,10 @@ export default function HowWeWin() {
                   </td>
                   <td className="px-5 py-4">
                     <img src={logo} alt="Usersnap" className="h-4 w-auto" />
+                  </td>
+                  <td className="px-5 py-4 whitespace-nowrap text-ink-soft">
+                    {howWeWin.usersnap.cost}
+                    <span className="mt-1 block text-xs font-semibold text-purple">(best value)</span>
                   </td>
                   <td className="px-5 py-4 font-semibold text-ink">{howWeWin.usersnap.promise}</td>
                   <td className="px-5 py-4 font-semibold text-purple">{howWeWin.usersnap.gap}</td>
