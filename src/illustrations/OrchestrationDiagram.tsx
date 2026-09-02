@@ -120,6 +120,35 @@ export default function OrchestrationDiagram() {
           </g>
         </motion.g>
 
+        <motion.g
+          initial={{ opacity: 0, y: -6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.95 }}
+        >
+          <rect
+            x={HUB.x - 68}
+            y={HUB.y + HUB.r + 10}
+            width="136"
+            height="24"
+            rx="12"
+            fill="white"
+            fillOpacity="0.92"
+            stroke="#2E314618"
+          />
+          <text
+            x={HUB.x}
+            y={HUB.y + HUB.r + 26}
+            fontSize="10.5"
+            fontWeight="600"
+            fill="#2E3146"
+            fontFamily="Inter, sans-serif"
+            textAnchor="middle"
+          >
+            Snappy, your AI agent
+          </text>
+        </motion.g>
+
         {outputs.map((o, i) => (
           <motion.path
             key={`out-line-${o.label}`}

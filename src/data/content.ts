@@ -154,17 +154,17 @@ export const agenticActionsPage = {
 
 export const hero = {
   eyebrow: 'The product evidence platform',
-  h1: 'Extraordinary evidence powers the world’s best products',
-  sub: 'Usersnap generates build-ready ideas and guards every output with evidence, orchestrating every action so growth compounds release after release.',
+  h1: 'Nothing costs more than building the wrong features.',
+  sub: 'Usersnap turns scattered feedback into evidence-backed decisions, orchestrating product output and compounding growth, release after release.',
   primaryCta: 'Book a demo',
-  secondaryCta: 'Start for free',
+  secondaryCta: 'Get started',
   note: 'Snap for free in under 10 mins. No credit card required.',
 }
 
 export const blueprint = {
   label: 'The Product Blueprint',
-  kicker: 'Nothing costs more than building the wrong features.',
-  sub: 'Turn scattered feedback into evidence-backed decisions in four steps.',
+  kicker: 'Extraordinary evidence powers the world’s best products',
+  sub: 'Generate build-ready ideas in four easy steps.',
   cta: 'See how it works',
   ctaHref: '#pillars',
   cardsLabel: 'As easy as one, two, snap.',
@@ -297,7 +297,6 @@ export const howWeWin = {
       name: 'Feedback tools',
       competitors: 'Canny, Marker, Refiner',
       redOcean: '50+ competitors',
-      cost: '$7K-10K',
       promise: 'Helps you understand why.',
       gap: 'Value stops at insight collection. Commoditized.',
     },
@@ -305,7 +304,6 @@ export const howWeWin = {
       name: 'Engagement tools',
       competitors: 'Beamer, ProductFruits',
       redOcean: '20+ competitors',
-      cost: '$5K-20K',
       promise: 'Grows activation through education.',
       gap: 'Value stops at awareness. Low value offering.',
     },
@@ -313,7 +311,6 @@ export const howWeWin = {
       name: 'Research tools',
       competitors: 'Dovetail, Enterpret, Maze, Userpilot',
       redOcean: '30+ competitors',
-      cost: '$25K-50K',
       promise: 'Finds the problems that matter.',
       gap: 'Value stops at problem prioritization, and stops short of a solution.',
     },
@@ -321,7 +318,6 @@ export const howWeWin = {
       name: 'Roadmapping tools',
       competitors: 'Productboard, Aha, Jira Product Discovery, Airfocus',
       redOcean: '20+ competitors',
-      cost: '$90K-100K',
       promise: 'Speeds up planning and alignment.',
       gap: 'Value stops at planning, with no read on whether it paid off.',
     },
@@ -329,14 +325,12 @@ export const howWeWin = {
       name: 'AI platforms',
       competitors: 'Claude, OpenAI, Perplexity',
       redOcean: null,
-      cost: '$150K',
       promise: 'AI will make your life better.',
       gap: 'A pain to set up and maintain, with your data left unscoped.',
     },
   ],
   usersnap: {
     name: 'Product evidence platform',
-    cost: '$25K-35K',
     promise: 'All of the above.',
     gap: 'Value spans teams, tools, and workflows.',
   },
@@ -408,7 +402,7 @@ export const finalCta = {
   heading: 'Usersnap is where the work happens for you.',
   sub: 'Snap your first customer signal before the week is out.',
   primaryCta: 'Book a demo',
-  secondaryCta: 'Start for free',
+  secondaryCta: 'Get started',
 }
 
 export const footer = {
