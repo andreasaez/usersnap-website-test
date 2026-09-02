@@ -5,7 +5,7 @@ import logo from '../assets/logo.svg'
 import logoMark from '../assets/icon-mark.svg'
 import { icons as iconSet } from '../icons'
 
-const accents = ['#3A21C0', '#899ED7', '#7071A0', '#3A21C0', '#7071A0']
+const ICON_ACCENT = '#899ED7'
 
 const icons: React.ReactNode[] = [
   iconSet.feedback,
@@ -15,13 +15,13 @@ const icons: React.ReactNode[] = [
   iconSet.ai,
 ]
 
-function CategoryIcon({ color, children }: { color: string; children: React.ReactNode }) {
+function CategoryIcon({ children }: { children: React.ReactNode }) {
   return (
     <span
-      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/60 bg-white/50 shadow-sm backdrop-blur-md"
-      style={{ color }}
+      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl"
+      style={{ backgroundColor: ICON_ACCENT }}
     >
-      <svg viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none" stroke="white" strokeWidth="1.8">
         {children}
       </svg>
     </span>
@@ -55,7 +55,7 @@ export default function HowWeWin() {
                   <tr key={row.name} className="border-b border-ink/10 align-top">
                     <td className="px-5 py-4">
                       <div className="flex items-center gap-3">
-                        <CategoryIcon color={accents[i % accents.length]}>{icons[i % icons.length]}</CategoryIcon>
+                        <CategoryIcon>{icons[i % icons.length]}</CategoryIcon>
                         <span className="font-semibold text-ink">{row.name}</span>
                       </div>
                     </td>

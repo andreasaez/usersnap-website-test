@@ -49,7 +49,10 @@ function CapabilityIcon({ name }: { name: string }) {
     )
   }
   return (
-    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple">
+    <span
+      className="flex h-12 w-12 items-center justify-center rounded-2xl"
+      style={{ backgroundColor: '#899ED7' }}
+    >
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="white" strokeWidth="1.7">
         {icons[name]}
       </svg>
