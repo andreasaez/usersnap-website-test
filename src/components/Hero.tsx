@@ -58,7 +58,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="whitespace-pre-line font-display text-3xl font-semibold leading-[1.12] tracking-tight text-ink sm:text-4xl"
+            className="whitespace-pre-line font-display text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[3.25rem]"
           >
             {hero.h1}
           </motion.h1>
