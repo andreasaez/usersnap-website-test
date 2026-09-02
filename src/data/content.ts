@@ -202,7 +202,7 @@ export const blueprint = {
 
 export const pillars = {
   heading: 'Built for enterprise product builders',
-  sub: 'Bad data slows every team down. Usersnap orchestrates clean evidence across research, roadmaps, and integrations, with data you can trust at every step of your product development cycle.',
+  sub: 'Bad data slows every team down. Usersnap orchestrates evidence across research, roadmaps, and integrations, with data you can trust at every step of your product development cycle.',
   cta: 'Learn more',
   ctaHref: '#',
   items: [

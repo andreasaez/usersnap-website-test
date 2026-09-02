@@ -1,9 +1,7 @@
 import { differentiators } from '../data/content'
 import Reveal from './Reveal'
 import GradientBackdrop from './GradientBackdrop'
-import { icons } from '../icons'
-
-const ICON_ACCENT = '#899ED7'
+import DifferentiatorPreview from '../illustrations/DifferentiatorPreview'
 
 export default function Differentiators() {
   return (
@@ -22,23 +20,11 @@ export default function Differentiators() {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {differentiators.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.1}>
-              <div className="flex h-full flex-col rounded-3xl border border-sage/40 bg-white/80 p-8 shadow-[0_16px_40px_-24px_rgba(58,33,192,0.18)] backdrop-blur-md">
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-2xl"
-                  style={{ backgroundColor: ICON_ACCENT }}
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-6 w-6"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="1.7"
-                    strokeLinecap="round"
-                  >
-                    {icons[item.icon]}
-                  </svg>
+              <div className="flex h-full flex-col rounded-3xl border border-sage/40 bg-white/80 px-8 pb-8 pt-8 shadow-[0_16px_40px_-24px_rgba(58,33,192,0.18)] backdrop-blur-md">
+                <div className="-mt-12 mb-5 overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-[0_20px_36px_-18px_rgba(46,49,70,0.4)]">
+                  <DifferentiatorPreview variant={item.icon} />
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-ink">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{item.body}</p>
                 <a
                   href={item.href}
