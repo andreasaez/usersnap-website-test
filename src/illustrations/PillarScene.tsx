@@ -15,7 +15,7 @@ function Chip({ children, color }: { children: string; color: string }) {
 function FloatingSnappy({ mood, shake }: { mood: 'overwhelmed' | 'confident'; shake?: boolean }) {
   return (
     <motion.div
-      className="h-24 w-24"
+      className="h-36 w-36"
       initial={{ opacity: 0, y: -6 }}
       animate={{ opacity: 1, y: [0, -5, 0], rotate: shake ? [-1.5, 1.5, -1.5] : 0 }}
       transition={{
@@ -37,26 +37,26 @@ function ResearchScene() {
     { x: -60, y: -6, rotate: -4, delay: 0.6 },
   ]
   return (
-    <div className="flex flex-col items-center gap-5 px-6 py-8">
-      <div className="relative flex items-center gap-4">
+    <div className="flex flex-col items-center gap-7 px-6 py-10">
+      <div className="relative flex items-center gap-6">
         <div className="relative">
           <FloatingSnappy mood="overwhelmed" shake />
           {drifts.map((d, i) => (
             <motion.span
               key={i}
-              className="absolute left-1/2 top-1/2 h-2 w-2 rounded-full"
+              className="absolute left-1/2 top-1/2 h-2.5 w-2.5 rounded-full"
               style={{ backgroundColor: ['#899ED7', '#7071A0', '#3A21C0'][i] }}
-              initial={{ x: d.x, y: d.y, opacity: 0 }}
-              animate={{ opacity: [0, 1, 1, 0], x: [d.x, d.x - 6, d.x], y: [d.y, d.y - 10, d.y] }}
+              initial={{ x: d.x * 1.4, y: d.y * 1.4, opacity: 0 }}
+              animate={{ opacity: [0, 1, 1, 0], x: [d.x * 1.4, d.x * 1.4 - 8, d.x * 1.4], y: [d.y * 1.4, d.y * 1.4 - 14, d.y * 1.4] }}
               transition={{ duration: 3, repeat: Infinity, delay: d.delay, ease: 'easeInOut' }}
             />
           ))}
         </div>
         <motion.svg
           viewBox="0 0 40 16"
-          className="h-4 w-9 shrink-0 text-ink-faint"
+          className="h-5 w-12 shrink-0 text-ink-faint"
           fill="none"
-          animate={{ x: [0, 5, 0] }}
+          animate={{ x: [0, 6, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
         >
           <path d="M2 8h32M28 3l6 5-6 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -64,7 +64,7 @@ function ResearchScene() {
         <FloatingSnappy mood="confident" />
       </div>
       <motion.div
-        className="flex flex-wrap items-center justify-center gap-1.5"
+        className="flex flex-wrap items-center justify-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.4 }}
@@ -75,7 +75,7 @@ function ResearchScene() {
         <Chip color="#899ED7">NPS</Chip>
       </motion.div>
       <motion.p
-        className="text-xs text-ink-faint"
+        className="text-sm text-ink-faint"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.45, duration: 0.4 }}
@@ -95,17 +95,17 @@ function RoadmapScene() {
     { label: 'Later', color: '#B3BEB3' },
   ]
   return (
-    <div className="flex items-center gap-5 px-6 py-8">
+    <div className="flex items-center gap-8 px-6 py-10">
       <FloatingSnappy mood="confident" />
       <div className="flex-1">
-        <div className="flex h-14 items-end gap-1.5">
+        <div className="flex h-24 items-end gap-2.5">
           {bars.map((h, i) => (
             <motion.span
               key={i}
-              className="w-full rounded-sm"
+              className="w-full rounded-md"
               style={{ backgroundColor: i === bars.length - 1 ? '#3A21C0' : '#899ED7' }}
               initial={{ height: 0 }}
-              animate={{ height: [h, h * (i === bars.length - 1 ? 1.1 : 0.85), h] }}
+              animate={{ height: [h * 1.6, h * 1.6 * (i === bars.length - 1 ? 1.1 : 0.85), h * 1.6] }}
               transition={{
                 height: {
                   duration: i === bars.length - 1 ? 1.6 : 2.2,
@@ -117,11 +117,11 @@ function RoadmapScene() {
             />
           ))}
         </div>
-        <div className="mt-3 flex gap-1.5">
+        <div className="mt-4 flex gap-2">
           {lanes.map((lane, i) => (
             <motion.span
               key={lane.label}
-              className="flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white"
+              className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white"
               style={{ backgroundColor: lane.color }}
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
@@ -152,8 +152,8 @@ function IntegrationsScene() {
     { x: 186, y: 82, color: '#899ED7' },
   ]
   return (
-    <div className="px-6 py-8">
-      <div className="relative mx-auto h-28 w-52">
+    <div className="px-6 py-10">
+      <div className="relative mx-auto h-44 w-80">
         <svg viewBox="0 0 200 110" className="absolute inset-0 h-full w-full">
           {nodes.map((n, i) => (
             <motion.line
@@ -194,10 +194,10 @@ function IntegrationsScene() {
             />
           ))}
         </svg>
-        <div className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2">
           <motion.div
             className="h-full w-full"
-            animate={{ y: [0, -4, 0] }}
+            animate={{ y: [0, -5, 0] }}
             transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
           >
             <SnappyCharacter mood="confident" />
@@ -205,12 +205,12 @@ function IntegrationsScene() {
         </div>
       </div>
       <motion.p
-        className="mt-2 text-center text-xs text-ink-faint"
+        className="mt-3 text-center text-sm text-ink-faint"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.4 }}
       >
-        No manual exports. No one-off syncs.
+        No manual exports or one-off syncs.
       </motion.p>
     </div>
   )
@@ -222,7 +222,7 @@ export default function PillarScene({ active }: { active: number }) {
   const Scene = SCENES[active] ?? SCENES[0]
 
   return (
-    <div className="relative mx-auto w-full max-w-md">
+    <div className="relative mx-auto w-full max-w-xl">
       <div
         className="absolute -inset-8 -z-10 rounded-[32px] opacity-70 blur-2xl"
         style={{
