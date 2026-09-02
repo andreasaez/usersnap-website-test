@@ -1,31 +1,5 @@
 import { motion } from 'motion/react'
-import { snappyGlyph20 } from '../icons'
 import SnappyCharacter from './SnappyCharacter'
-
-const labels = ['Research & Discovery', 'Roadmaps & Reporting', 'Integrations & Workflows']
-
-function Chrome({ label }: { label: string }) {
-  return (
-    <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3.5">
-      <div className="flex gap-2">
-        <span className="h-2 w-2 rounded-full bg-ink/15" />
-        <span className="h-2 w-2 rounded-full bg-ink/15" />
-        <span className="h-2 w-2 rounded-full bg-ink/15" />
-      </div>
-      <span className="flex items-center gap-2 text-xs font-semibold text-ink-faint">
-        <span
-          className="flex h-5 w-5 items-center justify-center rounded-full"
-          style={{ background: 'linear-gradient(135deg, #392CCB, #7D2AE8)' }}
-        >
-          <svg viewBox="0 0 20 20" className="h-3 w-3" fill="none" stroke="white" strokeWidth="1.6">
-            {snappyGlyph20}
-          </svg>
-        </span>
-        {label}
-      </span>
-    </div>
-  )
-}
 
 function Chip({ children, color }: { children: string; color: string }) {
   return (
@@ -38,30 +12,56 @@ function Chip({ children, color }: { children: string; color: string }) {
   )
 }
 
+function FloatingSnappy({ mood, shake }: { mood: 'overwhelmed' | 'confident'; shake?: boolean }) {
+  return (
+    <motion.div
+      className="h-24 w-24"
+      initial={{ opacity: 0, y: -6 }}
+      animate={{ opacity: 1, y: [0, -5, 0], rotate: shake ? [-1.5, 1.5, -1.5] : 0 }}
+      transition={{
+        opacity: { duration: 0.4 },
+        y: { duration: 2.8, repeat: Infinity, ease: 'easeInOut', delay: 0.3 },
+        rotate: shake ? { duration: 1.8, repeat: Infinity, ease: 'easeInOut' } : undefined,
+      }}
+    >
+      <SnappyCharacter mood={mood} />
+    </motion.div>
+  )
+}
+
 // Research & Discovery: scattered signal becomes tagged evidence
 function ResearchScene() {
+  const drifts = [
+    { x: -46, y: -58, rotate: -8, delay: 0 },
+    { x: 40, y: -66, rotate: 6, delay: 0.3 },
+    { x: -60, y: -6, rotate: -4, delay: 0.6 },
+  ]
   return (
     <div className="flex flex-col items-center gap-5 px-6 py-8">
-      <div className="flex items-center gap-4">
-        <motion.div
-          className="h-20 w-20"
-          initial={{ opacity: 0, y: -6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+      <div className="relative flex items-center gap-4">
+        <div className="relative">
+          <FloatingSnappy mood="overwhelmed" shake />
+          {drifts.map((d, i) => (
+            <motion.span
+              key={i}
+              className="absolute left-1/2 top-1/2 h-2 w-2 rounded-full"
+              style={{ backgroundColor: ['#899ED7', '#7071A0', '#3A21C0'][i] }}
+              initial={{ x: d.x, y: d.y, opacity: 0 }}
+              animate={{ opacity: [0, 1, 1, 0], x: [d.x, d.x - 6, d.x], y: [d.y, d.y - 10, d.y] }}
+              transition={{ duration: 3, repeat: Infinity, delay: d.delay, ease: 'easeInOut' }}
+            />
+          ))}
+        </div>
+        <motion.svg
+          viewBox="0 0 40 16"
+          className="h-4 w-9 shrink-0 text-ink-faint"
+          fill="none"
+          animate={{ x: [0, 5, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <SnappyCharacter mood="overwhelmed" />
-        </motion.div>
-        <svg viewBox="0 0 40 16" className="h-4 w-9 shrink-0 text-ink-faint" fill="none">
           <path d="M2 8h32M28 3l6 5-6 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-        <motion.div
-          className="h-20 w-20"
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
-        >
-          <SnappyCharacter mood="confident" />
-        </motion.div>
+        </motion.svg>
+        <FloatingSnappy mood="confident" />
       </div>
       <motion.div
         className="flex flex-wrap items-center justify-center gap-1.5"
@@ -96,9 +96,7 @@ function RoadmapScene() {
   ]
   return (
     <div className="flex items-center gap-5 px-6 py-8">
-      <div className="h-24 w-24 shrink-0">
-        <SnappyCharacter mood="confident" />
-      </div>
+      <FloatingSnappy mood="confident" />
       <div className="flex-1">
         <div className="flex h-14 items-end gap-1.5">
           {bars.map((h, i) => (
@@ -107,8 +105,15 @@ function RoadmapScene() {
               className="w-full rounded-sm"
               style={{ backgroundColor: i === bars.length - 1 ? '#3A21C0' : '#899ED7' }}
               initial={{ height: 0 }}
-              animate={{ height: h }}
-              transition={{ duration: 0.45, delay: 0.1 + i * 0.08, ease: 'easeOut' }}
+              animate={{ height: [h, h * (i === bars.length - 1 ? 1.1 : 0.85), h] }}
+              transition={{
+                height: {
+                  duration: i === bars.length - 1 ? 1.6 : 2.2,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: 0.5 + i * 0.15,
+                },
+              }}
             />
           ))}
         </div>
@@ -116,12 +121,19 @@ function RoadmapScene() {
           {lanes.map((lane, i) => (
             <motion.span
               key={lane.label}
-              className="rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white"
+              className="flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white"
               style={{ backgroundColor: lane.color }}
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.4 + i * 0.1 }}
             >
+              {i === 0 && (
+                <motion.span
+                  className="h-1.5 w-1.5 rounded-full bg-white"
+                  animate={{ opacity: [1, 0.3, 1] }}
+                  transition={{ duration: 1.3, repeat: Infinity, ease: 'easeInOut' }}
+                />
+              )}
               {lane.label}
             </motion.span>
           ))}
@@ -145,14 +157,13 @@ function IntegrationsScene() {
         <svg viewBox="0 0 200 110" className="absolute inset-0 h-full w-full">
           {nodes.map((n, i) => (
             <motion.line
-              key={i}
+              key={`line-${i}`}
               x1={n.x}
               y1={n.y}
               x2={100}
               y2={55}
               stroke="#2E314622"
               strokeWidth="1.4"
-              strokeDasharray="3 4"
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ pathLength: 1, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
@@ -160,19 +171,37 @@ function IntegrationsScene() {
           ))}
           {nodes.map((n, i) => (
             <motion.circle
-              key={i}
+              key={`flow-${i}`}
+              r="2.4"
+              fill={n.color}
+              animate={{ cx: [n.x, 100], cy: [n.y, 55], opacity: [0, 1, 1, 0] }}
+              transition={{ duration: 1.8, repeat: Infinity, delay: 0.8 + i * 0.4, ease: 'easeIn' }}
+            />
+          ))}
+          {nodes.map((n, i) => (
+            <motion.circle
+              key={`node-${i}`}
               cx={n.x}
               cy={n.y}
               r="6"
               fill={n.color}
               initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.3, delay: 0.15 + i * 0.1 }}
+              animate={{ scale: [1, 1.18, 1] }}
+              transition={{
+                scale: { duration: 2.2, repeat: Infinity, ease: 'easeInOut', delay: 0.9 + i * 0.2 },
+              }}
+              style={{ transformOrigin: `${n.x}px ${n.y}px` }}
             />
           ))}
         </svg>
         <div className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2">
-          <SnappyCharacter mood="confident" />
+          <motion.div
+            className="h-full w-full"
+            animate={{ y: [0, -4, 0] }}
+            transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <SnappyCharacter mood="confident" />
+          </motion.div>
         </div>
       </div>
       <motion.p
@@ -201,12 +230,9 @@ export default function PillarScene({ active }: { active: number }) {
             'radial-gradient(60% 60% at 25% 20%, rgba(58,33,192,0.16), transparent 70%), radial-gradient(55% 55% at 80% 85%, rgba(137,158,215,0.22), transparent 70%)',
         }}
       />
-      <div className="overflow-hidden rounded-3xl border border-sage/40 bg-white/95 shadow-[0_24px_60px_-24px_rgba(46,49,70,0.35)] backdrop-blur-sm">
-        <Chrome label={labels[active] ?? labels[0]} />
-        <motion.div key={active} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.25 }}>
-          <Scene />
-        </motion.div>
-      </div>
+      <motion.div key={active} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.25 }}>
+        <Scene />
+      </motion.div>
     </div>
   )
 }
