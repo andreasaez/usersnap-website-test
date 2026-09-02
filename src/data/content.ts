@@ -276,7 +276,7 @@ export const differentiators = {
     {
       icon: 'reporting',
       title: 'Evidence-to-impact reporting',
-      body: 'Every insight and signal links back to the update it shaped. The data is ready anytime you need it.',
+      body: 'Every insight and signal links back to the update it shaped. Ready anytime you need it.',
       href: '#',
     },
     {

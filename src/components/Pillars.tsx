@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { pillars } from '../data/content'
 import Reveal from './Reveal'
 import GradientBackdrop from './GradientBackdrop'
-import SnappyPanel from '../illustrations/SnappyPanel'
+import PillarScene from '../illustrations/PillarScene'
 
 const accents = ['#3A21C0', '#7071A0', '#899ED7']
 
@@ -27,7 +27,7 @@ export default function Pillars() {
 
         <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal className="order-2 lg:order-1">
-            <SnappyPanel active={active} />
+            <PillarScene active={active} />
           </Reveal>
 
           <Reveal delay={0.1} className="order-1 flex flex-col gap-2 lg:order-2">
