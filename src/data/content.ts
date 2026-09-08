@@ -41,29 +41,24 @@ export const nav = [
     heading: 'Use cases',
     children: [
       {
-        label: 'Spot trending problems',
+        label: 'Continuous discovery',
         href: '#',
-        description: 'Catch what is trending early, with evidence that updates as fast as your team ships.',
+        description: 'Spot trending problems and validate every solution with AI-powered feedback analysis.',
       },
       {
-        label: 'Validate ideas',
+        label: 'Competitor research',
         href: '#',
-        description: 'Gather feedback directly from customers and validate ideas fast.',
+        description: 'Analyze market trends, call transcripts, and pricing to find the gaps competitors are missing.',
       },
       {
-        label: 'Build with evidence',
+        label: 'High-impact prioritization',
         href: '#',
-        description: 'Get product, support, and sales aligned on the same evidence before you build.',
+        description: 'Score and prioritize with evidence as the backbone to every decision.',
       },
       {
-        label: 'Grow product value',
+        label: 'Workflow management',
         href: '#',
-        description: 'Spot patterns, prioritize features, and drive adoption every release.',
-      },
-      {
-        label: 'Close the feedback loop',
-        href: '#',
-        description: 'Tell every customer what shipped, automatically.',
+        description: 'Keep track of work with automated discovery and status visibility across every team.',
       },
       {
         label: 'Become an AI-enabled team',
