@@ -1,4 +1,11 @@
-export const nav = [
+type NavChild = { label: string; href: string; description?: string; icon?: string }
+type NavColumn = { heading?: string; children: NavChild[] }
+type NavItem =
+  | { label: string; href: string; columns?: never; heading?: never; children?: never }
+  | { label: string; href?: string; columns: NavColumn[]; heading?: never; children?: never }
+  | { label: string; href?: string; heading?: string; children: NavChild[]; columns?: never }
+
+export const nav: NavItem[] = [
   {
     label: 'Platform',
     href: '#blueprint',
@@ -38,32 +45,46 @@ export const nav = [
   },
   {
     label: 'Solutions',
-    heading: 'Use cases',
-    children: [
+    columns: [
       {
-        label: 'Continuous discovery',
-        href: '#',
-        description: 'Spot trending problems and validate every solution with AI-powered feedback analysis.',
+        heading: 'Use cases',
+        children: [
+          {
+            label: 'Continuous discovery',
+            href: '#',
+            description: 'Spot trending problems and validate every solution with AI-powered feedback analysis.',
+          },
+          {
+            label: 'Competitor research',
+            href: '#',
+            description: 'Analyze market trends, call transcripts, and pricing to find the gaps competitors are missing.',
+          },
+          {
+            label: 'High-impact prioritization',
+            href: '#',
+            description: 'Score and prioritize with evidence as the backbone to every decision.',
+          },
+          {
+            label: 'Workflow management',
+            href: '#',
+            description: 'Keep track of work with automated discovery and status visibility across every team.',
+          },
+          {
+            label: 'Become an AI-enabled team',
+            href: '#',
+            description: 'AI generates the hypotheses, prototypes, and solutions your team can act on immediately.',
+          },
+        ],
       },
       {
-        label: 'Competitor research',
-        href: '#',
-        description: 'Analyze market trends, call transcripts, and pricing to find the gaps competitors are missing.',
-      },
-      {
-        label: 'High-impact prioritization',
-        href: '#',
-        description: 'Score and prioritize with evidence as the backbone to every decision.',
-      },
-      {
-        label: 'Workflow management',
-        href: '#',
-        description: 'Keep track of work with automated discovery and status visibility across every team.',
-      },
-      {
-        label: 'Become an AI-enabled team',
-        href: '#',
-        description: 'AI generates the hypotheses, prototypes, and solutions your team can act on immediately.',
+        heading: 'The PM toolkit',
+        children: [
+          { label: 'Visual Feedback', href: '#' },
+          { label: 'In-app Surveys', href: '#' },
+          { label: 'Sentiment sensor', href: '#' },
+          { label: 'Roadmap Planner', href: '#' },
+          { label: 'Announcements & Changelog', href: '#' },
+        ],
       },
     ],
   },
