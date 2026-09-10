@@ -89,7 +89,16 @@ export const nav: NavItem[] = [
     ],
   },
   { label: 'Customers', href: '#customers' },
-  { label: 'Resources', href: '#' },
+  {
+    label: 'Resources',
+    children: [
+      { label: 'Templates', href: '#' },
+      { label: 'Blog', href: '#' },
+      { label: 'Customer Stories', href: '#' },
+      { label: 'Help Center', href: '#' },
+      { label: 'Changelog', href: '#' },
+    ],
+  },
   { label: 'Pricing', href: '#' },
 ]
 
